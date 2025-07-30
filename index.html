@@ -1,0 +1,3237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OLT Configaration</title>
+</head>
+<style>
+   body {background-color: rgb(3, 3, 3);}
+    h1{
+text-align: center;
+color: wheat
+    }
+    .x{
+        color: hsl(294, 44%, 75%);
+        text-align: left;
+        font-size: 30px;
+    }
+    .y{
+        color: rgba(248, 8, 8, 0.822);
+        font-size: 20px;
+    }
+    table, th, td {
+  border: 1px solid rgb(233, 233, 226);
+  border-collapse: collapse;
+
+    }
+    .row {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
+  padding: 5px;
+}
+
+
+    * {
+  box-sizing: border-box;
+  color: aqua;
+  
+}
+.column {
+  float: left;
+  width: 50%;
+  padding: 5px;
+  tr:hover {background-color:#FF0B55}
+  border: 5px solid wheat
+
+
+}
+.row::after {
+  content: "";
+  clear: both;
+  display: table; 
+}
+
+.div_1 {
+    float: left;
+    background-color:black;
+    width:auto;
+    padding: 5px;
+    tr:hover {background-color:#FF0B55}
+    border: 5px solid wheat
+    
+
+}
+.div2 {
+    float: initial;
+    background-color: brown;
+}
+
+.div3 {
+    float: initial;
+    background-color: brown;
+}
+
+.clear-div-1 {
+    clear: both;
+}
+
+.z{
+    font-size: 20px;
+}
+.div_4{
+    float: left;
+    background-color:black;
+    width:auto;
+    padding: 5px;
+    tr:hover {background-color:#FF0B55}
+    
+}
+
+
+</style>
+<div class="row">
+    <div class="column">
+       <p class="x">Error Massage</p>
+       <table>
+          <tr>
+             <th>MASSAGE CODE</th>
+             <th>Description</th>
+           </tr>
+           <tr>
+             <td>651</td>
+             <td>VLAN not Match</td>
+           </tr>
+           <tr>
+             <td>691</td>
+             <td>Wrong PPPoE Aggign</td>
+           </tr>
+           <tr>
+             <td>629</td>
+             <td>PPPoE already Connect</td>
+           </tr>
+           <tr>
+             <td>628</td>
+             <td>---</td>
+           </tr>
+           <tr>
+             <td>718</td>
+             <td>---</td>
+           </tr>
+           <tr>
+             <td>720</td>
+             <td>---</td>
+           </tr>
+       </table>
+ 
+       
+ 
+    </div>
+    <div class="column">
+       <p class="x">SFP WaveLengths</p>
+ 
+       <table>
+          <tr>
+             <th>Port Capacity</th>
+             <th>WebeLengths</th>
+          </tr>
+          <tr>
+             <td>1G</td>
+             <td>1310 / 1550</td>
+          </tr>
+          <tr>
+             <td>LACP_MTU</td>
+             <td>1496</td>
+          </tr>
+          <tr>
+             <td>10G</td>
+             <td>1270 / 1330</td>
+          </tr>
+          <tr>
+             <td>Duel Core</td>
+             <td>Bouth side 1310</td>
+          </tr>
+       </table>
+    </div>
+    <div class="column">
+       <p class="x">Importhant Note</p>
+       <table>
+          <tr>
+             <th>Subject</th>
+             <th>Description</th>
+          </tr>
+          <tr>
+             <td>BGP</td>
+             <td>TCP port 179</td>
+          </tr>
+          <tr>
+             <td>MTU/MRU</td>
+             <td>1480</td>
+          </tr>
+          <tr>
+             <td>প্রাইভেট ASN:</td>
+             <td>16-বিট ASN রেঞ্জ: 64,512 থেকে 65,535</td>
+             <td>32-বিট ASN রেঞ্জ: 4,200,000,000 থেকে 4,294,967,294</td>
+          </tr>
+          <tr>
+             <td>DNS</td>
+             <td>port 53</td>
+          </tr>
+          <tr>
+             <td>SSH</td>
+             <td> 22</td>
+          </tr>
+          <tr>
+             <td>EBGP</td>
+             <td>AD- 20</td>
+          </tr>
+          <tr>
+             <td>IBGP</td>
+             <td>AD- 200</td>
+          </tr>
+          <td> Junos OS  EBGP and IBGP  .</td>
+          <td>(170) for both  </td>
+          <tr>
+          <td>Telnet</td>
+          <td>23</td>
+          </tr>
+          <tr>
+             <td>VLAN</td>
+             <td>12-bit</td>
+          </tr>
+          <tr>
+             <td>Native VLANs</td>
+             <td>802.1Q standard</td>
+          </tr>
+          <tr>
+             <td>Trunk</td>
+             <td>Trunk Port 802.1Q ট্যাগ ব্যবহার করে VLAN ID নির্দেশ করে</td>
+          </tr>
+          <tr>
+             <td> IEEE 802.3ad</td>
+             <td>standard version of 
+                EtherChannel. </td>
+          </tr>
+          <tr>
+             <td>Bridge ID</td>
+             <td>Piority ( 32768 ) + MAC Address</td>
+          </tr>
+          <tr>
+             <td>speed</td>
+             <td>115200 , 9600 , 19200 , 38400 , 57600 , 2400 ,38000</td>
+          </tr>
+          <tr>
+             <td>Bridge ID</td>
+             <td>Piroity ke 4096 kore barate hoy</td>
+          </tr>
+          <tr>
+            <td>GGC redirector</td>
+            <td><a href="http://redirector.c.googlevideo.com/report_mapping"target="_blank">Google_redirector</a></td>
+
+          </tr>
+
+       </table>
+ 
+    </div>
+    <div class="column">
+       <p class="x">OLT Defult IP</p>
+       <table>
+          <tr>
+             <th>Bandor Name</th>
+             <th>IP Adderss</th>
+          </tr>
+          <tr>
+             <td>DBC OLT</td>
+             <td>192.168.2.100</td>
+          </tr>
+          <tr>
+             <td>Airmedia OLT</td>
+             <td>192.168.77.254</td>
+          </tr>
+          <tr>
+             <td>VSOL</td>
+             <td>192.168.8.100</td>
+             <td>192.168.8.200</td>
+          </tr>
+          <tr>
+             <td>Avise OLT</td>
+             <td>192.168.100.100/24</td>
+          </tr>
+          <tr>
+             <td>HSGQ</td>
+             <td>192.168.100.1</td>
+          </tr>
+          <tr>
+             <td>CoreLink OLT</td>
+             <td>192.168.1.88/24</td>
+             <td>192.168.0.88/24</td>
+          </tr>
+          <tr>
+             <td>XGTEC OLT</td>
+             <td>192.168.0.10</td>
+          </tr>
+          <tr>
+             <td>AIR MEDIA </td>
+             <td>192.168.77.254</td>
+          </tr>
+          <tr>
+             <td>ATOP OLT</td>
+             <td>192.168.100.1</td>
+          </tr>
+          <tr>
+             <td>PHYHOME_OLT</td>
+             <td>192.168.0.18/24</td>
+             <td>phyhome</td>
+             <td>1234</td>
+          </tr>
+          <tr>
+             <td>solitine</td>
+             <td>192.168.100.100</td>
+             <td>admin</td>
+             <td>admin@786</td>
+          </tr>
+       </table>
+       </div>
+ 
+ </div>
+ <br>
+     
+ <div class="div_1">
+    <table>
+        <caption>Splitting Ratio in EPON</caption>
+        <tr>
+            <th>Two Stages</th>
+            <th>Three Stages</th>
+        </tr>
+        <tr>
+            <td>1:8 ⇔ 1:8</td>
+            <td>1:2 ⇔ 1:2 ⇔ 1:16</td>
+        </tr>
+        <tr>
+            <td>1:4 ⇔ 1:16</td>
+            <td>1:4 ⇔ 1:4 ⇔ 1:4</td>
+        </tr>
+        <tr>
+            <td>1:2 ⇔ 1:32</td>
+            <td>1:4 ⇔ 1:8 ⇔ 1:2</td>
+        </tr>
+    </table>
+ </div>
+ 
+ 
+<div class="div_1">
+    <table>
+        <caption>Splitting Ratio in GPON</caption>
+        <tr>
+            <th>Two Stages</th>
+            <th>Three Stages</th>
+        </tr>
+        <tr>
+            <td>1:4 ⇔ 1:32</td>
+            <td>1:2 ⇔ 1:2 ⇔ 1:32</td>
+        </tr>
+        <tr>
+            <td>1:8 ⇔ 1:16</td>
+            <td>1:4 ⇔ 1:4 ⇔ 1:8</td>
+        </tr>
+        <tr>
+            <td>1:2 ⇔ 1:64</td>
+            <td>1:2 ⇔ 1:8 ⇔ 1:8</td>
+        </tr>
+    </table>
+</div > 
+ <div class="div_1">
+    <table>
+        <caption>Standard of PON Module EPON or GPON</caption>
+        <tr>
+            <th>EPON</th>
+            <th>GPON</th>
+        </tr>
+        <tr>
+            <td>PX20+ , PX20++ , PX20+++ </td>
+            <td>B+ , C+ , C++ , C+++ </td>
+        </tr>
+    </table>
+ </div>
+ <div class="div_1">
+    <table>
+        <caption>Optical Power Loss</caption>
+        <tr>
+            <th>Point of Loss</th>
+            <th>Loss</th>
+        </tr>
+        <tr>
+            <td>Insertion Loss</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>Fiber attenuation Loss ( length of Fiber ) </td>
+            <td>0.35 dB /Km</td>
+        </tr>
+        <tr>
+            <td>Connector</td>
+            <td>0.75 dB</td>
+        </tr>
+        <tr>
+            <td>Splicing</td>
+            <td>0.2 dB</td>
+        </tr>
+        <tr>
+            <td>Splitter</td>
+            <td>In the Chart</td>
+        </tr>
+        <tr>
+            <td>Safety margin </td>
+            <td>3.0 dB</td>
+        </tr>
+    </table>
+ </div>
+ 
+<div class="div_1">
+    <table>
+        <caption>Splitting Loss</caption>
+        <tr>
+            <th>Splitter</th>
+            <th>Avg Loss</th>
+        </tr>
+        <tr>
+            <td>1:2</td>
+            <td>3.5</td>
+        </tr>
+        <tr>
+            <td>1:4</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td>1:8</td>
+            <td>10.5</td>
+        </tr>
+        <tr>
+            <td>1:16</td>
+            <td>14</td>
+        </tr>
+        <tr>
+            <td>1:32</td>
+            <td>17</td>
+        </tr>
+    </table>
+</div>
+ 
+
+<div class="clear-div-1"></div>
+<h1>CisCos Nexus Switch</h1>
+
+<p class="x">Spanning Tree MSTP Configuration for Core-SW</p>
+    <pre class="y">
+spanning-tree mode mstp
+spanning-tree mstp 0 priority 0
+
+interface GigaEthernet0/15
+    spanning-tree guard root
+    spanning-tree bpdufilter enable
+    </pre>
+<p class="x">MGMT Vlan IP assign</p>
+<ul class="y">
+   <li>HINGULA-CORE-Nexus-SW#configure terminal</li>
+   <li>HINGULA-CORE-Nexus-SW(config)# feature interface-vlan</li>
+   <li>HINGULA-CORE-Nexus-SW(config)# interface vlan 100</li>
+   <li>HINGULA-CORE-Nexus-SW(config-if)# ip address 172.30.164.90 255.255.255.252</li>
+   <li>HINGULA-CORE-Nexus-SW(config-if)# exit</li>
+</ul>
+<p class="x">NTP Server</p>
+<ul class="y">
+   <li>feature ntp </li>
+   <li>ntp server 192.168.1.1</li><br>
+   <li>==== For Manually time set====</li>
+   <li>clock protocol none vdc 1</li>
+   <li>clock set 20:18:00 19 January 2025</li>
+</ul>
+<p class="x">LACP</p>
+<ul class="y">
+   <li>interface Port-aggregator1</li>
+   <li>description NTTN-LACP</li>
+   <li>switchport trunk vlan-allowed 1,3258-3262,3385-3388</li>
+   <li>switchport mode trunk</li>
+   <li>no shutdown</li>
+   <li>exit</li><br>
+   <li>configure terminal.</li>
+   <li> interface ethernet 1/1</li>
+   <li>description NTTN-LINK</li>
+   <li>switchport trunk allowed vlan 1,3258-3262,3385-3388</li>
+   <li>channel-group 1 mode active</li>
+   <li> no shutdown</li>
+   <li>exit</li>
+</ul>
+
+    <h1>Vsol_OLT</h1>
+    <p class="x">OLT login info</p>
+    <ol class="y">
+        <li>show interface aux = 192.168.8.100</li>
+        <li>AUX Port 192.168.8.200</li>
+        <li>speed 115200</li>
+        <li>web verification-code disable</li>
+        <li>terminal no monitor</li>
+        <li>erase startup-config</li>
+
+    </ol>
+    <p class="x">Vsol 10G port Enable</p>
+    <ul class="y">
+        <li>epon-olt(config)# debug mode</li>
+        <li>epon-olt(debug-mode)# set giu mode sfp+</li>
+
+    </ul>
+    <p class="x">Password Change</p>
+    <ul class="y">
+        <li>epon-olt(config)# user add Abd1234 login-password Ab@12345</li>
+        <li>epon-olt(config)# user role Abd1234 admin enable-password Ab@12345</li>
+    </ul> 
+    <p class="x">PON and SFP uplink Optical Leaser</p><br>
+    <ol class="y">
+        <li>rasatechnologies(config)# sh pon optical transceiver all</li>
+        <li>rasatechnologies(config)# sh gigabitethernet optical transceiver all</li>
+    </ol>
+    <p class="x">Specific one ONU optical info</p>
+    <ol class="y">
+        <li>gpon-olt(config-pon-0/1)# sh onu 1 optical_info</li>
+    </ol>
+    <p class="x">Basic Configaration of Vsol_OLT</p>
+    <ul class="y">
+                <li>Username:admin</li>                               
+                <li>Password: Xpon@Olt9417# </li>
+                <li>epon-olt(config)# show interface breif</li> 
+                <li>epon-olt(config-pon-0/2)# show onu status all</li> 
+                <li>epon-olt(config-pon-0/2)# show onu auth-info all </li>        
+                <li>epon-olt(config-pon-0/2)# show onu opm-diag </li>
+                <li>epon-olt(config-pon-0/2)# no onu auth all  </li>
+    </ul>
+    <p class="x">Basic Configaration</p>
+    <ul class="y">
+        <li>vlan 200 - 208</li>
+        <li>interface g0/16</li>
+        <li>switchport mode trunk</li>
+        <li>switchport trunk vlan 200 - 208</li>
+        <li>gpon-olt(config)# interface vlan 200</li>
+        <li>gpon-olt(interface-vlan-200)# ip address 192.168.3.200 255.255.255.0</li>
+        <li>gpon-olt(interface-vlan-200)# exit</li>
+        <li>gpon-olt(config)# ip route 0.0.0.0 0.0.0.0 192.168.3.1</li>
+
+
+    </ul>  
+    <p class="x"> Vsol Onu + Router </p>
+    <ul class="y">
+        <li>1 port onu/ 2 and 4 antenna onu router</li>
+        <li>Username: admin</li>
+        <li>Password: stdONUi0i</li><br>
+        <li>Username: admin</li>
+        <li>Password: stdONU101</li>
+        <li><a href="https://youtu.be/ST-LTojvfCA"target="_blank">Video tuitorial</a></li><br>
+        <li>Username : admin</li>
+        <li>New Password : admin@123</li>
+        
+
+    </ul>
+      <h1>BDCom OLt</h1>   
+      <p class="x">BDCOM OLT or SW OS installation Process</p>
+      <ul class="y">
+         <li>monitor#ip address 192.168.8.2 255.255.255.0</li>
+         <li>monitor#copy tftp: 192.168.8.10</li>
+         <li>Source file name[]?Switch.bin</li>
+         <li>Remote-server ip address[]?192.168.8.10</li>
+         <li>Destination file name[Switch.bin]?</li>
+      </ul>
+      
+      
+      <p class="x">BDCOM Switch SSH Configuration </p>
+    <div class="log-output">
+        Switch_config# ip sshd enable<br>
+        Switch_config# ip sshd version 2<br>
+        Switch_config# no ip sshd disable-aes<br>
+    </div>
+         <p class="x">SSH enable</p>
+         <ul class="y">
+           
+            <li>Switch_config# ip sshd enable</li>
+            <li>Switch_config# ip sshd version 2</li>
+            <li>Switch_config# no ip sshd disable-aes </li>
+            <li>Switch_config#ip http port 8080</li>
+         </ul>
+         <p class="x"> Disable Fiber auto Config</p>
+         <ul class="y">
+            <li>SONAIMURI_8PORT_OLT_config_tg0/2#no fiber-auto-config</li>
+            <li>SONAIMURI_8PORT_OLT_config_tg0/2#speed 1000</li>
+         </ul>
+         <p class="x"> NTP Server Enable </p>
+         <ul class="y">
+            <li>ntp client enable</li>
+            <li>time-zone tz 6 0</li>
+            <li>ntp server 182.16.156.5</li>
+         </ul>
+         <p class="x">Enable & configuration of SNMP community service</p>
+         <pre class="y">
+            Switch_config# snmp-server community 0 bdcom-test rw 
+            snmp-server host 172.16.0.100 version v2c bdcom-test authentication configure snmp 
+         </pre>
+         <p class="x">Loop detection and protection for Up-link Ports</p>
+         <pre class="y">
+            Switch_config# loopback-detection 
+            ! 
+            no error-disable-recovery 
+            !  
+            int range gig 0/1-8 
+            loopback-detection enable 
+            loopback-detection control shutdown
+         </pre>
+         <p class="x">Logging buffer size configuration</p>
+         <pre>
+
+            Switch_config# logging on 
+            logging buffered 409400 
+         </pre>
+         <p class="x">To configure the loopback on all ONU-</p>
+         <li class="y">
+            <ul>Switch#config</ul>
+            <ul>Switch_config#interface range gpON 0/1:1-10</ul>
+            <ul>Switch_config_if_range#gpon onu loopback-detect protocol private</ul>
+            <ul>Switch_config_if_range#gpon onu uni 1 loopback-detect enable.</ul>
+
+         </li>
+         <p class="x">LACP in BDCom OLT</p>
+         <ul class="y">
+            <li>int port-aggregator 1</li>
+            <li>switchport mode trunk</li>
+            <li>aggregator-group 1 mode lacp</li><br>
+            <li>int range tg 1/1,4</li>
+            <li>aggregator-group 1</li>
+         </ul>
+         <p class="x">LACP load-balance From SW to MK RW</p>
+         <ul class="y">
+            <li>aggregator-group load-balance src-ip</li>
+            <li>aggregator-group load-balance src-mac</li>
+            <li>aggregator-group load-balanc dst-ip</li>
+            <li>aggregator-group load-balance dst-mac</li>
+            <li>aggregator-group load-balance both-ip</li>
+            <li>aggregator-group load-balance both-mac</li>
+            <li>aggregator-group load-balance both-l4port</li>
+         </ul>
+         <p class="x"> BDCOM Failover Configaration</p>
+         <ul class="y">
+            <li>KASHIPUR_POP_config#backup-link-group  1 preemption-mode forced delay 5</li>
+
+         </ul><br>
+         <ul class="y">
+            <li>KASHIPUR_POP#config </li>
+            <li>KASHIPUR_POP_config#interface gigaEthernet 0/15</li>
+            <li>KASHIPUR_POP_config_g0/15#backup-link-group 1 active</li>
+            <li>KASHIPUR_POP_config_g0/15#exit</li>
+         </ul><br>
+         <ul class="y">
+            <li>KASHIPUR_POP#config</li>
+            <li>KASHIPUR_POP_config#interface gigaEthernet 0/16</li>
+            <li>KASHIPUR_POP_config_g0/16#backup-link-group 1 backup </li>
+            <li>KASHIPUR_POP_config_g0/16#exit</li>
+         </ul>
+         <p class="x">SNMP</p>
+         <ul class="y">
+            <li>snmp-server community 0 SkyNET30 RO </li>
+            <li>snmp-server host 10.15.0.58 SkyNET30</li>
+         </ul>
+         <p class="x">BDCOM OLT onu mac Delete</p>
+         <ul class="y">
+            <li>no epon bind-onu sequence 1</li>
+<li>no epon bind-onu sequence 2</li>
+<li>no epon bind-onu sequence 3</li>
+<li>no epon bind-onu sequence 4</li>
+<li>no epon bind-onu sequence 5</li>
+<li>no epon bind-onu sequence 6</li>
+<li>no epon bind-onu sequence 7</li>
+<li>no epon bind-onu sequence 8</li>
+<li>no epon bind-onu sequence 9</li>
+<li>no epon bind-onu sequence 10</li>
+<li>no epon bind-onu sequence 11</li>
+<li>no epon bind-onu sequence 12</li>
+<li>no epon bind-onu sequence 13</li>
+<li>no epon bind-onu sequence 14</li>
+<li>no epon bind-onu sequence 15</li>
+<li>no epon bind-onu sequence 16</li>
+<li>no epon bind-onu sequence 17</li>
+<li>no epon bind-onu sequence 18</li>
+<li>no epon bind-onu sequence 19</li>
+<li>no epon bind-onu sequence 20</li>
+<li>no epon bind-onu sequence 21</li>
+<li>no epon bind-onu sequence 22</li>
+<li>no epon bind-onu sequence 23</li>
+<li>no epon bind-onu sequence 24</li>
+<li>no epon bind-onu sequence 25</li>
+<li>no epon bind-onu sequence 26</li>
+<li>no epon bind-onu sequence 27</li>
+<li>no epon bind-onu sequence 28</li>
+<li>no epon bind-onu sequence 29</li>
+<li>no epon bind-onu sequence 30</li>
+<li>no epon bind-onu sequence 31</li>
+<li>no epon bind-onu sequence 32</li>
+<li>no epon bind-onu sequence 33</li>
+<li>no epon bind-onu sequence 34</li>
+<li>no epon bind-onu sequence 35</li>
+<li>no epon bind-onu sequence 36</li>
+<li>no epon bind-onu sequence 37</li>
+<li>no epon bind-onu sequence 38</li>
+<li>no epon bind-onu sequence 39</li>
+<li>no epon bind-onu sequence 40</li>
+<li>no epon bind-onu sequence 41</li>
+<li>no epon bind-onu sequence 42</li>
+<li>no epon bind-onu sequence 43</li>
+<li>no epon bind-onu sequence 44</li>
+<li>no epon bind-onu sequence 45</li>
+<li>no epon bind-onu sequence 46</li>
+<li>no epon bind-onu sequence 47</li>
+<li>no epon bind-onu sequence 48</li>
+<li>no epon bind-onu sequence 49</li>
+<li>no epon bind-onu sequence 50</li>
+<li>no epon bind-onu sequence 51</li>
+<li>no epon bind-onu sequence 52</li>
+<li>no epon bind-onu sequence 53</li>
+<li>no epon bind-onu sequence 54</li>
+<li>no epon bind-onu sequence 55</li>
+<li>no epon bind-onu sequence 56</li>
+<li>no epon bind-onu sequence 57</li>
+<li>no epon bind-onu sequence 58</li>
+<li>no epon bind-onu sequence 59</li>
+<li>no epon bind-onu sequence 60</li>
+<li>no epon bind-onu sequence 61</li>
+<li>no epon bind-onu sequence 62</li>
+<li>no epon bind-onu sequence 63</li>
+<li>no epon bind-onu sequence 64</li>
+
+         </ul>
+         <h1>Avise OLT</h1>
+         <ul class="y">
+            <li>manage ip address 192.168.100.100/24</li>
+            <li>OLT(config)# show port state all</li>
+            <li>OLT(config)# show time</li>
+            <li>OLT(config)# show mac-address dynamic</li>
+            <li>OLT(config)# show mac-address port ge 1</li><br>
+            <li>interface vlanif 1</li>
+            <li>ifconfig 172.30.154.106 netmask 255.255.255.252</li>
+         </ul>
+         <h1>CDATA OLT</h1>
+         <p class="x">Mac delete</p>
+         <ul class="y">
+            <li>web verification-code disabl</li>
+            <li>Internet Address is 192.168.1.100, netmask 255.255.255.0</li>
+            <li>OLT(config-interface-epon-0/0)# ont delete offline-list 1 all</li>
+            <li>OLT(config-interface-epon-0/0)# ont delete 1 all</li>
+            <li>OLT(config-interface-epon-0/0)# show ont info 4 all</li><br>
+            <li>OLT(config-interface-epon-0/0)# no  ont load select 1-8</li><br>
+         </ul>
+         <p class="x">reset OLT</p>
+         <ul class="y">
+            <li>system default all</li>
+            <li>OLT# erase saved-config</li>
+         </ul>
+         <p class="x">Port wais STP Disable or Enable</p>
+         <ul class="y">
+            <li>interface xge 0/0</li>
+            <li>spanning-tree admin 1 disable</li>
+         </ul>
+       <p class="x">For Power</p>
+       <ul class="y">
+        <li>interface g0/0</li>
+        <li>show ddm-info 5</li>
+       </ul>
+       <p class="x">View Port</p>
+       <ul class="y">
+        <li>show port stat all</li>
+       </ul>
+       <p class="x">Pon Power Check</p>
+       <ul class="y">
+        <li>show ont optical_info 1 all </li>
+       </ul>
+       <p class="x">VLAN</p>
+       <ul class="y">
+        <li>interface g0/0</li>
+        <li>vlan access 1-4 40</li>
+        <li>shoutdown 1-4</li>
+       </ul>
+       <p class="x">ONU Check & Delete</p>
+       <ul class="y">
+        <li>OLT(config)# interface epon 0/0</li>
+        <li>OLT(config-interface-epon-0/0)# show ont info 1</li>
+        <li>OLT(config-interface-epon-0/0)# ont delete offline-list 3 al</li><br>
+        <li>OLT(config)# vlan 100,109-112</li>
+       </ul>
+       <p class="x">Link Configaration</p>
+       <ul class="y">
+        <li>OLT(config)# interface ge 0/0</li>
+        <li>OLT(config-interface-ge-0/0)# show port state all</li>
+        <li>OLT(config-interface-ge-0/0)# vlan mode 1-4 trunk</li>
+        <li>OLT(config-interface-ge-0/0)#  vlan trunk 1-4 1-200</li><br>
+        <li>OLT(config)# interface epon 0/0</li>
+        <li>OLT(config-interface-epon-0/0)# vlan mode 1-4 access</li>
+        <li>OLT(config-interface-epon-0/0)# vlan access 1 105</li>
+        <li>OLT(config-interface-epon-0/0)# vlan access 2 106</li>
+       </ul>
+       <p class="x">CDATA OLD Version</p>
+       <ul class="y">
+        <li>Milon-OLT(olt-1)# show startup-config all</li>
+        <li>system ipconfig inband 172.30.152.50 255.255.255.252</li>
+        <li>system ipconfig gateway 172.30.152.49</li>
+        <li>epon# swport ge2</li>
+        <li>epon#vlan add 1,501-520 tag</li>
+        <li>epon(GE-5)# vlan add 505</li>
+        <li>epon(GE-5)#pvid 505</li>
+        <li>epon# system save</li>
+       </ul>
+       <p class="x">C-DATA_OLT LACP</p>
+       <ul class="y">
+         <li>interface link-aggregation</li>
+         <li>link-aggregation group 1 unicast balance source-dest-mac</li>
+         <li>lacp set system priority default</li>
+         <li>member add ge 0/0 5-6 link-aggregation group 1</li>
+       </ul>
+       <h1>HSGQ OLT</h1>
+       <ul class="y">
+        <li>show onu-info all</li>
+        <li>interface epon 1</li>
+        <li>no bind-onu all</li>
+        <li>exit</li><br>
+        <li>ifconfig 192.168.100.1 netmask 255.255.255.0</li><br>
+        <li>interface vlanif 1</li>
+        <li>ifconfig 172.30.154.182 netmask 255.255.255.252</li>
+        <li>exit</li>
+        <li>route default gw 172.30.154.181</li>
+        <li>JAHID-OLT(config)# erase config-file</li>
+       </ul>
+       <p class="x">VLAN Create</p>
+       <ul class="y"> 
+        <li>vlan standard 406</li>
+        <li>interface vlanif 406</li>
+        <li>ifconfig 172.30.152.178 netmask 255.255.255.252</li>
+        <li>route default gw 172.30.152.177</li>
+        <li>dns primary 8.8.8.8 secondary 8.8.4.4</li><br>
+        <li>interface ge 2</li>
+        <li>port default-vlan 406</li><br>
+        <li>interface ge 6</li>
+        <li>vlan mode trunk</li>
+        <li>port default-vlan 406</li><br>
+        <li>show port status all</li><br>
+        <li>interface ge 3</li>
+        <li>show state</li>
+        <li>port enable</li>
+        <li>show optical-diag 1</li>
+        <li>show ip address</li>
+       </ul>
+       <h1>Tvs_Proton</h1>
+       <p class="x">Vlan Create and IP assign</p>
+       <ul class="y">
+        <li>Switch(config)#vlan database</li>
+        <li>Switch(config-vlan)#vlan 10</li><br>
+        <li>Switch(config)#ip interface vlan 10</li>
+        <li>Switch(config)#interface vlan10</li>
+        <li>Switch(config-vlan10)#ip address 202.37.166.22/28</li>
+        <li>Switch(config-vlan10)#q</li>
+
+       </ul>
+       <h1>HUAWEI OLT-MA5683T</h1>
+       <p class="x">User Create</p>
+       <ul class="y">
+        <li>MA5683T>enable</li>
+        <li>MA5683T#config</li>
+        <li>MA5683T(config)#terminal user name</li>
+        <li>MA5683T(config)#terminal user password</li>       
+       </ul>
+       <p class="x">For  board confermation</p>
+       <ul class="y">
+        <li>display board 0</li>
+        <li>MA5683T(config)#board confirm 0</li>
+       </ul>
+       <p class="x">PON port auto find enable</p>
+       <ul class="y">
+        <li>MA5683T(config)#interface gpon 0/0 ( Pon Bord/Card )</li>
+        <li>MA5683T(config-if-gpon-0/0)#port 0 ont-auto-find enable ( jotota port totota enabal kara lagbe )</li>
+        <li>MA5683T(config-if-gpon-0/0)#port 1 ont-auto-find enable</li>
+       </ul>
+       <p class="x">VLAN Create and IP Assign</p>
+       <ul class="y">
+        <li>MA5683T>enable</li>
+        <li>MA5683T#config</li>
+        <li>MA5683T#display board 0</li>
+        <li>MA5683T(config)#vlan 455 smart</li>
+        <li>MA5683T(config)#display board 0/8</li>
+        <li>MA5683T(config)#port vlan 455 0/8 0-1 ( 0-1 , port range ) or ( 0/8 bord number )</li><br>
+        <li>MA5683T(config)#interface vlanif 455</li>
+        <li>MA5683T(config-if-vlanif455)#ip address 172.30.160.226 255.255.255.252</li>
+        <li>MA5683T(config)#ip route-static 0.0.0.0 0.0.0.0 172.30.160.225</li>
+       </ul>
+       <p class="x">DBA Profile</p>
+       <ul class="y">
+        <li>MA5683T(config)#dba-profile add profile-id 10 type4 max 1024000</li>
+       </ul>
+       <p class="x">Line Profile</p>
+       <ul class="y">
+        <li>MA5683T(config)#ont-lineprofile gpon profile-id 455 profile-name LINE_VLAN_455 ( 455 , eita kono vlan na , nijer moto kore modify kora jabe )</li>
+        <li>MA5683T(config-gpon-lineprofile-455)#tcont 1 dba-profile-id 10</li>
+        <li>MA5683T(config-gpon-lineprofile-455)#gem add 0 eth tcont 1 ( eth ta holo onu ethar port ) </li>
+        <li>MA5683T(config-gpon-lineprofile-455)#gem mapping 0 0 vlan 455 ( ekhane prothom 0 ta holo index number ar 2nd 0 gem add 0 ta hobe )</li>
+        <li>MA5683T(config-gpon-lineprofile-455)#commit</li>
+       </ul>
+       <p class="x">Service Profile</p>
+       <ul class="y">
+        <li>MA5683T(config)#ont-srvprofile gpon profile-id 455 profile-name SRV_VLAN_455  ( 455 nijer moto kore )</li>
+        <li>MA5683T(config-gpon-srvprofile-455)#ont-port eth 1</li>
+        <li>MA5683T(config-gpon-srvprofile-455)#port vlan eth 1 455 ( ei 455 tolo vlan 455 )</li>
+        <li>MA5683T(config-gpon-srvprofile-455)#ring check enable</li>
+        <li>MA5683T(config-gpon-srvprofile-455)#ring check resume-interval 120</li>
+        <li>MA5683T(config-gpon-srvprofile-455)#commit</li>
+       </ul>
+
+       <p class="x">HUAWEI OLT ONU add Process</p>
+       <ul class="y">
+         <li>MA5683T>enable</li>
+         <li>MA5683T#display ont autofind all </li><br>
+         <li>MA5683T#display interface vlanif </li>
+         <li>MA5683T#display ip interface brief</li>
+         <li>MA5683T#display vlan all</li><br>
+         <li>MA5683T#display board 0 </li>
+         <li>MA5683T# display board 0/0</li>
+         <li>MA5683T#display board 0/1</li><br>
+         <li>MA5683T(config)#display current-configuration ont 0/1/0 0</li><br>
+         <li>MA5683T(config)#interface epon 0/1</li>
+         <li>MA5683T(config-if-epon-0/1)#ont add 0 mac-auth 8007-1BE1-6118 oam ont-lineprofile-id 455</li>
+         <li>{ ont-srvprofile-id<K>|ont-srvprofile-name<K> }:ont-srvprofile-id 455</li>
+            <li>{ <cr>|desc<K>|ont-type<K> }:desc city@chw27</li>
+         <li>MA5683T(config-if-epon-0/1)#ont port native-vlan 0 5 eth 1 vlan 455</li>
+         <li>MA5683T(config-if-epon-0/1)#quit</li><br>
+         <li>MA5683T(config)#service-port vlan 455 epon 0/1/0 ont 5 multi-service user-vlan 455</li><br>
+         <li>MA5683T(config)#display mac-address ont 0/1/0 5</li>
+         <li>MA5683T(config)#display ont info summary 0/1/0 </li>
+         <li>MA5683T(config)#save </li>
+         </ul>
+         <h1>ALL About MK</h1>
+         <p class="x">Dynamic Vlan create</p>
+         <ul class="y">
+            <li>for N from=5 to=10 do={interface/vlan/add name=("vlan"$N) vlan-id=$N interface=ether3}</li>
+         </ul>
+         <p class="x">Dynamic Vlan Interface Change</p>
+         <ul class="y">
+            <li>interface vlan set [find interface=ether3] interface=ether4</li>
+         </ul>
+         <p class="x"> Reset Mikrotik Router</p>
+         <ul class="y">
+            <li>/system reset-configuration no-defaults=yes skip-backup=yes</li>
+         </ul>
+         <p class="x">DHCP Configaration</p>
+         <ul class="y">
+         
+            <ul>DHCP interface IP assign</ul>
+            <ul class="y">/interface bridge add name=bridge1</ul>
+            <ul class="y">/interface bridge port add interface=ether2 bridge=bridge1</ul>
+            <ul class="y">/ip address add address=192.168.88.1/24 interface=bridge1</ul>
+            <li>DHCP Setup</li>
+            <ul class="y">[admin@MikroTik] > ip dhcp-server/ setup [enter]</ul>
+            <ul class="y">Select interface to run DHCP server on </ul>
+               
+            <ul class="y">dhcp server interface: bridge1 [enter]</ul>
+            <ul class="y">Select network for DHCP addresses </ul>
+               
+            <ul class="y">dhcp address space: 192.168.88.0/24 [enter]</ul>
+            <ul class="y">Select gateway for given network </ul>
+               
+            <ul class="y">gateway for dhcp network: 192.168.88.1 [enter]</ul>
+            <ul class="y">Select pool of ip addresses given out by DHCP server </ul>
+               
+            <ul class="y">addresses to give out: 192.168.88.2-192.168.88.254 [enter]</ul>
+            <ul class="y">Select DNS servers </ul>
+               
+            <ul class="y">dns servers: 192.168.88.1 [enter] </ul>
+            <ul class="y">Select lease time </ul>
+               
+            <ul class="y">lease time: 1800 [enter]</ul>
+         </ul>
+         <p class="x">DHCP Client ba DHCP through te RW Internet ana</p>
+         <ul class="y">
+            <li> DHCP client</li>
+            <ul class="y">/ip dhcp-client add disabled=no interface=ether1</ul>
+            <li>Check dhcp Client</li>
+            <ul class="y">[admin@MikroTik] > ip dhcp-client print</ul>
+         </ul>
+         <p class="x">PPPoE Assign in MikroTik RW</p>
+         <ul class="y">
+            <li>PPPoE Client</li>
+           <ul class="y">/interface pppoe-client</ul>
+            <ul class="y">add disabled=no interface=ether1 user=me password=123 \</ul>
+               <ul class="y">add-default-route=yes use-peer-dns=yes</ul>
+            <li>NAT Configuration</li>
+            <ul class="y"></ul>/ip firewall nat</ul>
+            <ul class="y">add chain=srcnat out-interface=ether1 action=masquerade</ul>
+         </ul>
+         <p class="x">Port Forwarding</p>
+         <ul class="y">
+            <li>Port Forwarding</li>
+            <ul class="y">/ip firewall nat</ul>
+               <ul class="y">add chain=dstnat protocol=tcp port=3389 in-interface=ether1 \</ul>
+               <ul class="y">action=dst-nat to-address=192.168.88.254</ul>
+         </ul>
+         <p class="x">Setting up Wireless</p>
+         <ul class="y">
+            <li>Step-1_ security profile Create</li>
+            <ul class="y">/interface wireless security-profiles</ul>
+            <ul class="y">add name=myProfile authentication-types=wpa2-psk mode=dynamic-keys \</ul>
+            <ul class="y"> wpa2-pre-shared-key=1234567890</ul>
+            <li>Step-2_ enable the wireless interface Create</li>
+            <ul class="y">/interface wireless</ul>
+            <ul class="y">enable wlan1;</ul>
+            <ul class="y">set wlan1 band=2ghz-b/g/n channel-width=20/40mhz-Ce distance=indoors \</ul>
+            <ul class="y">mode=ap-bridge ssid=MikroTik-006360 wireless-protocol=802.11 \</ul>
+            <ul class="y">security-profile=myProfile frequency-mode=regulatory-domain \</ul>
+            <ul class="y">set country=latvia antenna-gain=3</ul>
+            <li>Step-3_ In Bridge interface add Wireless Interface</li>
+            <ul class="y"> /interface bridge port</ul>
+            <ul class="y">add interface=wlan1 bridge=bridge1</ul>
+            <li>Step-4_Bridge interface dhcp Setup</li>
+
+         </ul>
+         <p class="x">Blocking Unwanted Websites</p>
+         <ul class="y">
+            <li>Step_1 First, we need to add a NAT rule to redirect HTTP to our proxy</li>
+            <ul class="y">/ip firewall nat</ul>
+            <ul class="y">add chain=dst-nat protocol=tcp dst-port=80 src-address=192.168.88.0/24 \</ul>
+            <ul class="y">action=redirect to-ports=8080</ul>
+            <li>Step_2 Enable web proxy and drop some websites:</li>
+            <ul class="y">/ip proxy set enabled=yes</ul>
+            <ul class="y">/ip proxy access add dst-host=www.facebook.com action=deny</ul>
+            <ul class="y">/ip proxy access add dst-host=*.youtube.* action=deny</ul>
+            <ul class="y">/ip proxy access add dst-host=:vimeo action=deny</ul>
+         </ul>
+         <p class="x">MK RW full Reset</p>
+         <ul class="y">
+            <li>/system reset-configuration no-defaults=yes skip-backup=yes</li>
+         </ul>
+         <p class="x">MK RW full Backup</p>
+         <ul class="y">
+            <li>[Sky@Net@2@SONAGAZI_POP_RUMON] > export file=config.txt</li>
+         </ul>
+         <p class="x">Graph add</p>
+         <ul class="y">
+            <li>[mehedi@Mehedi] > tool/graphing/interface/add interface=ether4-LAN </li>
+         </ul>
+         <p class="x">Running interface disable on Server-MK</p>
+         <ul class="y">
+            <li>[Sky@Net@RAJGONJ_POP_CORE] > interface ethernet print</li>
+            <li>[Sky@Net@RAJGONJ_POP_CORE] > interface ethernet set disable-running-check=no</li>
+         </ul>
+    <p class="x">Vlan</p>
+    <ul class="y">
+        <li>/interface vlan</li>
+        <li>add interface=sfp+ether2_WAN name=314_SKYNET-INT vlan-id=314</li>
+        <li>add interface=sfp+ether2_WAN name=315_SKYNET-GGC vlan-id=315</li>
+        <li>add interface=sfp+ether2_WAN name=316_SKYNET-FNA vlan-id=316</li>
+        <li>add interface=sfp+ether2_WAN name=521_SKYNET-BDIX vlan-id=521</li>
+        <li>add interface=sfp+ether2_WAN name=589_SKYNET-FTP vlan-id=589</li>
+    </ul>
+    <p class="x"> Vlan interface IP assign </p>
+    <ul class="y">
+        <li>/ip address</li>
+        <li>add address=10.199.199.2/30 interface=314_SKYNET-INT</li>
+        <li>add address=172.16.18.150/30 interface=315_SKYNET-GGC</li>
+        <li>add address=172.16.22.82/30 interface=316_SKYNET-FNA</li>
+        <li>add address=172.16.21.98/30 interface=521_SKYNET-BDIX</li>
+        <li>add address=172.16.131.131/25 interface=589_SKYNET-FTP</li>
+
+    </ul>
+    <p class="x">DNS</p>
+    <ul class="y">
+        <li>/ip dns</li>
+        <li>set servers=103.109.56.100,8.8.4.4,8.8.8.8,1.1.1.1</li><br>
+        <li>Cisco = 208.67.222.222</li>
+        <li>Cisco = 208.67.222.123</li>
+        <li>Cisco = 208.67.220.223</li>
+
+    </ul>
+    <p class="x">NAT</p>
+    <ul class="y">
+        <li>/ip firewall nat</li>
+        <li>add action=masquerade chain=srcnat out-interface=3289_BDIX</li>
+        <li>add action=src-nat chain=srcnat out-interface=3288_FNA to-addresses=103.138.27.154/31</li>
+        <li>add action=src-nat chain=srcnat out-interface=3287_GGC to-addresses=103.138.27.154/31</li>
+        <li>add action=src-nat chain=srcnat out-interface=3286_IIG to-addresses=103.138.27.154/31</li>
+
+    </ul>
+    <p class="x">Queue Script</p>
+    <ul class="y">
+        <li>/queue type set [find name="5MB_INT_DW"] pcq-rate=50M</li>
+    </ul>
+    <p class="x">Port forwording</p>
+    <ul class="y">
+        <li>/ip firewall nat</li>
+        <li>add action=dst-nat chain=dstnat dst-address=103.138.24.107/31 dst-port=100 protocol=tcp to-addresses=172.30.157.226 to-ports=80</li>
+
+    </ul>
+
+
+    <p class="x">Server Running ( R ) disable</p>
+    <ul class="y">
+        <li>[Sky@Net@RAJGONJ_POP_CORE] > interface ethernet print</li>
+        <li>[Sky@Net@RAJGONJ_POP_CORE] > interface ethernet set disable-running-check=no</li>
+    </ul>
+    <p class="x">Fast Dotcom </p>
+    <ul class="y">
+        <li>/ip firewall address-list                                         </li>  
+<li>add address=23.246.54.0/23 list=SpeedTestIP                       </li>
+<li>add address=49.44.61.0/24 list=SpeedTestIP                        </li>
+<li>add address=54.154.202.0/23 list=SpeedTestIP                      </li>
+<li>add address=45.57.50.0/23 list=SpeedTestIP                        </li>
+<li>add address=198.38.114.0/23 list=SpeedTestIP                      </li>
+<li>add address=103.15.246.3 comment=summit list=SpeedTestIP          </li>
+<li>add address=151.101.10.219 list=SpeedTestIP                       </li>
+<li>add address=23.74.247.112 list=SpeedTestIP                        </li>
+<li>add address=103.15.40.4 comment=Level3 list=SpeedTestIP           </li>
+<li>add address=203.76.99.30 comment=Link3 list=SpeedTestIP           </li>
+<li>add address=103.58.73.2 list=SpeedTestIP                          </li>
+<li>add address=119.18.150.8 list=SpeedTestIP                         </li>
+<li>add address=103.15.164.23 list=SpeedTestIP                        </li>
+<li>add address=103.43.148.67 list=SpeedTestIP                        </li>
+<li>add address=192.168.10.2 list=SpeedTestIP                         </li>
+<li>add address=118.179.75.213 list=SpeedTestIP                       </li>
+<li>add address=123.253.37.2 list=SpeedTestIP                         </li>
+<li>add address=182.160.96.0/24 list=SpeedTestIP                      </li>
+<li>add address=103.15.40.0/24 list=SpeedTestIP                       </li>
+<li>add address=103.213.237.62 list=SpeedTestIP                       </li>
+<li>add address=210.176.156.49 list=SpeedTestIP                       </li>
+<li>add address=210.176.156.48 list=SpeedTestIP                       </li>
+<li>add address=151.101.54.114 list=SpeedTestIP                       </li>
+<li>add address=151.101.42.114 list=SpeedTestIP                       </li>
+<li>add address=151.101.10.214 list=SpeedTestIP                       </li>
+<li>add address=151.101.26.114 list=SpeedTestIP                       </li>
+<li>add address=151.101.0.143 list=SpeedTestIP                        </li>
+<li>add address=151.101.0.84 list=SpeedTestIP                         </li>
+<li>add address=125.56.237.3 list=SpeedTestIP                         </li>
+<li>add address=104.84.156.138 list=SpeedTestIP                       </li>
+<li>add address=59.151.128.157 list=SpeedTestIP                       </li>
+<li>add address=23.219.132.176 list=SpeedTestIP                       </li>
+<li>add address=23.198.124.11 list=SpeedTestIP                        </li>
+<li>add address=23.77.26.81 list=SpeedTestIP                          </li>
+<li>add address=182.79.223.0/24 list=SpeedTestIP                      </li>
+<li>add address=23.9.187.175 list=SpeedTestIP                         </li>
+<li>add address=52.33.112.234 list=SpeedTestIP                        </li>
+<li>add address=52.41.203.109 list=SpeedTestIP                        </li>
+<li>add address=69.173.159.0/24 list=SpeedTestIP                      </li>
+<li>add address=104.79.117.49 list=SpeedTestIP                        </li>
+<li>add address=104.118.129.134 list=SpeedTestIP                      </li>
+<li>add address=104.122.15.153 list=SpeedTestIP                       </li>
+<li>add address=104.122.11.167 list=SpeedTestIP                       </li>
+<li>add address=104.122.8.110 list=SpeedTestIP                        </li>
+<li>add address=104.121.255.145 list=SpeedTestIP                      </li>
+<li>add address=speedtest.net list=SpeedTestIP                        </li>
+<li>add address=fast.com list=SpeedTestIP                             </li>
+<li>add address=151.101.1.130 list=SpeedTestIP                        </li>
+<li>add address=184.26.196.191 list=SpeedTestIP                       </li>
+<li>add address=173.239.53.18 list=SpeedTestIP                        </li>
+<li>add address=151.101.196.64 list=SpeedTestIP                       </li>
+<li>add address=151.101.193.21 list=SpeedTestIP                       </li>
+<li>add address=151.101.10.208 list=SpeedTestIP                       </li>
+<li>add address=151.101.10.109 list=SpeedTestIP                       </li>
+<li>add address=151.101.9.108 list=SpeedTestIP                        </li>
+<li>add address=151.101.2.133 list=SpeedTestIP                        </li>
+<li>add address=151.101.2.110 list=SpeedTestIP                        </li>
+<li>add address=151.101.2.109 list=SpeedTestIP                        </li>
+<li>add address=151.101.1.186 list=SpeedTestIP                        </li>
+<li>add address=23.74.243.73 list=SpeedTestIP                         </li>
+<li>add address=34.208.20.104 list=SpeedTestIP                        </li>
+<li>add address=35.172.96.212 list=SpeedTestIP                        </li>
+<li>add address=192.229.237.182 list=SpeedTestIP                      </li>
+<li>add address=151.101.65.21 list=SpeedTestIP                        </li>
+<li>add address=151.101.129.21 list=SpeedTestIP                       </li>
+<li>add address=151.101.10.2 list=SpeedTestIP                         </li>
+<li>add address=151.101.8.81 list=SpeedTestIP                         </li>
+<li>add address=151.101.2.114 list=SpeedTestIP                        </li>
+<li>add address=128.1.97.163 list=SpeedTestIP                         </li>
+<li>add address=104.118.121.11 list=SpeedTestIP                       </li>
+<li>add address=199.232.237.51 list=SpeedTestIP                       </li>
+<li>add address=151.101.126.91 list=SpeedTestIP                       </li>
+<li>add address=151.101.114.91 list=SpeedTestIP                       </li>
+<li>add address=151.101.130.91 list=SpeedTestIP                       </li>
+<li>add address=151.101.2.91 list=SpeedTestIP                         </li>
+<li>add address=151.101.1.42 list=SpeedTestIP                         </li>
+<li>add address=182.79.164.0/24 list=SpeedTestIP                      </li>
+<li>add address=23.47.232.222 comment=fast.com list=SpeedTestIP       </li>
+<li>add address=52.42.104.145 comment=fast.com list=SpeedTestIP       </li>
+<li>add address=52.41.214.164 comment=fast.com list=SpeedTestIP       </li>
+<li>add address=118.215.155.65 comment=fast.com list=SpeedTestIP      </li>
+<li>add address=44.233.205.57 comment=fast.com list=SpeedTestIP       </li>
+<li>add address=35.155.65.240 comment=fast.com list=SpeedTestIP       </li>
+<li>add address=100.20.17.138 comment=fast.com list=SpeedTestIP       </li>
+<li>add address=202.150.221.0/24 comment=fast.com list=SpeedTestIP    </li>
+<li>add address=182.79.161.0/24 list=SpeedTestIP                      </li>
+<li>add address=182.79.245.0/24 list=SpeedTestIP                      </li>
+<li>add address=182.79.160.0/22 list=SpeedTestIP                      </li>
+<li>add address=182.79.164.0/22 list=SpeedTestIP                      </li>
+<li>add address=45.57.50.0/24 list=SpeedTestIP                        </li>
+<li>add address=45.57.51.0/24 list=SpeedTestIP                        </li>
+<li>add address=108.159.58.0/24 list=SpeedTestIP                      </li>
+<li>add address=69.173.158.0/24 list=SpeedTestIP                      </li>
+<li>add address=182.79.164.2 list=SpeedTestIP                         </li>
+<li>add address=182.79.164.165 list=SpeedTestIP                       </li>
+<li>add address=182.79.164.55 list=SpeedTestIP                        </li>
+<li>add address=182.79.164.6 list=SpeedTestIP                         </li>
+<li>add address=182.79.161.233 list=SpeedTestIP                       </li>
+<li>add address=45.57.51.140 list=SpeedTestIP                         </li>
+<li>add address=182.79.223.234 list=SpeedTestIP                       </li>
+<li>add address=45.57.50.142 list=SpeedTestIP                         </li>
+<li>add address=182.79.223.230 list=SpeedTestIP                       </li>
+<li>add address=45.57.51.146 list=SpeedTestIP                         </li>
+<li>add address=45.57.50.150 list=SpeedTestIP                         </li>
+<li>add address=45.57.51.153 list=SpeedTestIP                         </li>
+<li>add address=23.246.55.163 list=SpeedTestIP                        </li>
+<li>add address=45.57.51.142 comment=Link3 list=SpeedTestIP           </li>
+    </ul>
+    <ul class="y">
+        <li>/ip firewall mangle                                                                                           </li>  
+<li>add action=mark-packet chain=prerouting new-packet-mark=speed passthrough=yes src-address-list=SpeedTestIP    </li>
+<li>add action=mark-packet chain=prerouting dst-address-list=SpeedTestIP new-packet-mark=speed passthrough=yes    </li>
+<li>add action=mark-packet chain=prerouting protocol=icmp new-packet-mark=ping passthrough=yes                    </li><br>
+<li>/queue type                                                            </li>
+<li>add kind=pcq name=100M-up pcq-classifier=src-address pcq-rate=100M     </li>
+<li>add kind=pcq name=100M-down pcq-classifier=dst-address pcq-rate=100M   </li><br>
+<li>/queue simple                                                                                                            </li>      
+<li>add max-limit=1G/1G name=SpeedTestHighSpeed queue=100M-up/100M-down target="0.0.0.0/0" packet-marks=speed place-before=0 </li>
+<li>add max-limit=1G/1G name=Ping queue=100M-up/100M-down target="0.0.0.0/0" packet-marks=ping place-before                  </li>
+ </ul>
+<p class="x">Multi Router</p>
+<ul class="y">
+    <li>/ip firewall filter</li>
+    <li>add action=drop chain=forward src-address=10.0.0.0/8 src-address-list= MULTI-ROUTER ttl=less-than:62</li><br>
+    <li>/ip firewall mangle</li>
+    <li>add action=add-src-to-address-list address-list=MULTI-ROUTER address-list-timeout=15m chain=forward connection-state=established in-interface=all-ppp src-address=10.0.0.0/8 src-address-list=!ALLOW-MULTI-ROUTER ttl=less-than:62</li><br>
+    <li>/ip firewall mangle</li>
+    <li>add action=add-src-to-address-list address-list=DHCP address-list-timeout=15m chain=forward connection-state=established in-interface=all-ppp src-address=10.10.0.0/16 ttl=less-than:62</li>
+</ul>
+<p class="x">CDN</p>
+<ul class="y">
+    <li>/ip firewall mangle</li>
+    <li> add action=mark-packet chain=prerouting dst-address-list=CDN new-packet-mark=CDN passthrough=yes</li>
+    <li>add action=mark-packet chain=prerouting new-packet-mark=CDN passthrough=yes src-address-list=CDN</li><br>
+    <li>/ip firewall address-list</li>
+    <li>add address=154.85.74.0/24 list=CDN</li>
+    <li>add address=43.246.203.64/27 list=CDN</li><br>
+    <li>/queue type</li>
+    <li>add kind=pcq name=CDN_DW pcq-classifier=dst-address pcq-rate=20M</li>
+</ul>
+<p class="x">MK BGP Community Setup RWv6</p>
+<ul class="y">
+   <li>/routing filter</li>
+   <li>add action=accept chain=INT-IN set-bgp-communities=100:100</li>
+   <li>add action=accept bgp-communities=100:100 chain=INT-OUT set-bgp-communities=""</li>
+   <li>add action=discard bgp-communities="" chain=INT-OUT set-bgp-communities=""</li>
+</ul>
+<p class="x">MK BGP Community Setup RWv7</p>
+<ul class="y">
+   <li>/routing filter rule</li>
+   <li>add chain=GGC-IN disabled=no rule="set bgp-communities 200:200; accept;"</li>
+   <li>add chain=GGC-OUT disabled=no rule="if (bgp-communities includes 200:200) {accept} else {reject}"</li>
+</ul>
+<p class="x">Bkash Aps</p>
+<ul class="y">
+    <li>/ip firewall nat</li>
+    <li>add action=src-nat chain=srcnat comment=BKASH dst-address-list=BKASH to-addresses=103.109.57.225</li><br>
+    <li>/ip firewall address-list</li>
+    <li>add address=13.224.96.0/21 list=BKASH</li>
+    <li>add address=18.165.180.0/22 list=BKASH</li>
+    <li>add address=122.248.192.0/18 list=BKASH</li>
+    <li>add address=52.76.0.0/17 list=BKASH</li>
+</ul>
+<p class="x">Firewall BW Management / Que</p>
+<ul class="y">
+    <li>/ip firewall filter</li>
+    <li>add action=drop chain=forward limit=!180M,10M:bit out-interface=1256_HAZIRPARA_INT</li>
+    <li>add action=drop chain=forward limit=!300M,15M:bit out-interface=1456_HAZIRPARA_GGC</li>
+    <li>add action=drop chain=forward limit=!300M,15M:bit out-interface=1395_HAZIRPARA_FNA</li>
+</ul>
+<p class="x">log</p>
+<ul class="y">
+    <li>Logging</li>
+    <li>/system logging action</li>
+    <li>add bsd-syslog=yes name=SoftifyBD remote=103.109.56.236 syslog-facility=syslog target=remote</li><br>
+    <li>/system logging</li>
+    <li>set 0 topics=info,!firewall</li>
+    <li>add action=SoftifyBD topics=firewall</li>
+    <li>add action=SoftifyBD topics=script</li>
+</ul>
+<p class="x">GGC Cashe IP Route</p>
+<ul class="y">
+    <li>/ip route                                                                       </li>
+<li>add comment=GGC distance=1 dst-address=45.115.12.0/27 gateway=172.30.157.37     </li>
+<li>add comment=GGC distance=1 dst-address=45.115.12.32/27 gateway=172.30.157.37    </li>
+<li>add comment=GGC distance=1 dst-address=45.115.12.64/27 gateway=172.30.157.37    </li>
+<li>add comment=GGC distance=1 dst-address=103.109.58.160/27 gateway=172.30.157.37  </li>
+<li>add comment=GGC distance=1 dst-address=103.109.58.192/27 gateway=172.30.157.37  </li>
+<li>add comment=GGC distance=1 dst-address=103.109.58.224/27 gateway=172.30.157.37  </li>
+<li>add comment=GGC distance=1 dst-address=103.253.162.0/27 gateway=172.30.157.37   </li>
+<li>add comment=GGC distance=1 dst-address=106.0.60.0/27 gateway=172.30.157.37      </li>
+<li>add comment=GGC distance=1 dst-address=106.0.60.64/27 gateway=172.30.157.37     </li>
+<li>add comment=GGC distance=1 dst-address=43.245.142.192/27 gateway=172.30.157.37  </li>
+<li>add comment=GGC distance=1 dst-address=43.245.142.224/27 gateway=172.30.157.37  </li>
+<li>add comment=GGC distance=1 dst-address=103.15.244.96/27 gateway=172.30.157.37   </li>
+<li>add comment=GGC distance=1 dst-address=103.15.244.128/27 gateway=172.30.157.37  </li>
+<li>add comment=GGC distance=1 dst-address=103.15.244.160/27 gateway=172.30.157.37  </li>
+<li>add comment=GGC distance=1 dst-address=103.15.246.96/27 gateway=172.30.157.37   </li>
+<li>add comment=GGC distance=1 dst-address=144.48.148.192/27 gateway=172.30.157.37  </li>
+<li>add comment=GGC distance=1 dst-address=144.48.148.224/27 gateway=172.30.157.37  </li>
+<li>add comment=GGC distance=1 dst-address=157.119.187.0/27 gateway=172.30.157.37   </li>
+<li>add comment=GGC distance=1 dst-address=157.119.187.32/27 gateway=172.30.157.37  </li>
+<li>add comment=GGC distance=1 dst-address=103.242.216.64/27 gateway=172.30.157.37  </li>
+<li>add comment=GGC distance=1 dst-address=103.242.216.96/27 gateway=172.30.157.37  </li>
+<li>add comment=GGC distance=1 dst-address=103.242.216.128/27 gateway=172.30.157.37 </li>
+<li>add comment=GGC distance=1 dst-address=103.161.168.0/27 gateway=172.30.157.37   </li>
+<li>add comment=GGC distance=1 dst-address=103.161.168.32/28 gateway=172.30.157.37  </li>
+<li>add comment=GGC distance=1 dst-address=103.161.168.48/28 gateway=172.30.157.37  </li>
+<li>add comment=GGC distance=1 dst-address=103.161.168.64/27 gateway=172.30.157.37  </li>
+<li>add comment=GGC distance=1 dst-address=103.161.168.96/27 gateway=172.30.157.37  </li>
+<li>add comment=GGC distance=1 dst-address=103.161.168.128/27 gateway=172.30.157.37 </li>
+<li>add comment=GGC distance=1 dst-address=103.161.168.160/27 gateway=172.30.157.37 </li>
+<li>add comment=GGC distance=1 dst-address=103.161.168.192/28 gateway=172.30.157.37 </li>
+<li>add comment=GGC distance=1 dst-address=103.161.168.224/28 gateway=172.30.157.37 </li>
+<li>add comment=GGC distance=1 dst-address=202.173.120.0/28 gateway=172.30.157.37   </li>
+<li>add comment=GGC distance=1 dst-address=202.173.120.16/28 gateway=172.30.157.37  </li>
+<li>add comment=GGC distance=1 dst-address=202.173.120.32/27 gateway=172.30.157.37  </li>
+<li>add comment=GGC distance=1 dst-address=202.173.120.64/27 gateway=172.30.157.37  </li>
+<li>add comment=GGC distance=1 dst-address=202.173.120.96/27 gateway=172.30.157.37  </li>
+<li>add comment=GGC distance=1 dst-address=202.173.120.128/28 gateway=172.30.157.37 </li>
+<li>add comment=GGC distance=1 dst-address=103.43.149.160/27 gateway=172.30.157.37  </li>
+<li>add comment=GGC distance=1 dst-address=103.62.142.0/26 gateway=172.30.157.37    </li>
+<li>add comment=GGC distance=1 dst-address=103.62.142.64/26 gateway=172.30.157.37   </li>
+<li>add comment=GGC distance=1 dst-address=103.62.143.64/27 gateway=172.30.157.37   </li>
+<li>add comment=GGC distance=1 dst-address=103.62.143.224/27 gateway=172.30.157.37  </li>
+<li>add comment=GGC distance=1 dst-address=103.141.65.64/26 gateway=172.30.157.37   </li>
+<li>add comment=GGC distance=1 dst-address=103.141.65.192/27 gateway=172.30.157.37  </li>
+</ul>
+<p class="x"> FNA Cashe IP Route</p>
+<ul class="y">
+    <li>/ip route                                                                       </li>     
+<li>add comment=FNA distance=1 dst-address=43.245.142.128/26 gateway=192.168.41.25  </li>
+<li>add comment=FNA distance=1 dst-address=103.242.216.0/26 gateway=192.168.41.25   </li>
+<li>add comment=FNA distance=1 dst-address=103.242.216.192/26 gateway=192.168.41.25 </li>
+<li>add comment=FNA distance=1 dst-address=103.242.218.128/26 gateway=192.168.41.25 </li>
+<li>add comment=FNA distance=1 dst-address=123.253.67.0/26 gateway=192.168.41.25    </li>
+<li>add comment=FNA distance=1 dst-address=123.253.66.0/26 gateway=192.168.41.25    </li>
+<li>add comment=FNA distance=1 dst-address=106.0.60.128/26 gateway=192.168.41.25    </li>
+<li>add comment=FNA distance=1 dst-address=123.253.66.0/26/26 gateway=192.168.41.25 </li>
+<li>add comment=FNA distance=1 dst-address=103.242.218.0/26 gateway=192.168.41.25   </li>
+</ul>
+<p class="x">Normal MK Router Configaration </p>
+<ol class="z">
+    <li>LAN এন্ড WAN  পোর্ট ডিক্লিয়ার করতে হবে।   </li>
+    <li>WAN port IP assign</li>
+    <li>GW ip ke Defult route </li>
+    <li>Bridge > bridg interface Create</li>
+    <li>Bridge interface lan port assign ( Lan + Wlan )</li>
+    <li>Bridge interface IP assign</li>
+    <li> Nat  </li>
+    <li>IP > DHCP server > DHCP setup > interface হবে  Bridge interface</li>
+    <li>Wireless > wireliss mode হবে  ap bridge and security setup as my wish</li>
+</ol>
+<p class="x">By PPPoE Normal Router Configaration</p>
+<ol class="z">
+    <li>LAN এন্ড WAN  পোর্ট ডিক্লিয়ার করতে হবে। </li>
+    <li>PPP > + > PPPoE Client > INSTANCE > General , Instance : WAN port / Dial Out : user name or password > apply >OK</li>
+    <li>Bridge > bridg interface Create  </li>
+    <li>Bridge interface lan port assign ( Lan + Wlan )</li>
+    <li>Bridge interface IP assign</li>
+    <li>Nat</li>
+    <li>IP > DHCP server > DHCP setup > interface হবে  Bridge interface </li>
+    <li> Wireless > wireliss mode হবে  ap bridge and security setup as my wish</li>
+   
+</ol>
+<p class="x">IKEv2 Setup process</p>
+<ol class="z">
+    <li>Pool</li>
+    <li>Mode Config</li>
+    <ul class="z">
+        <li>/ip ipsec mode-config</li>
+        <li>add address-pool=VPN address-prefix-length=32 name=IKEv2_MODE split-dns=103.109.56.100,8.8.8.8</li>
+    </ul>
+    <li>Proposals</li>
+    <ul class="z">
+        <li>/ip ipsec proposal</li>
+        <li>add auth-algorithms=sha256,sha1 name=IKEV2_Proposal</li>
+    </ul>
+    <li>Group</li>
+    <li>Profiles</li>
+    <ul class="z">
+        <li>/ip ipsec profile</li>
+        <li>add enc-algorithm=aes-256,3des hash-algorithm=sha256 name=IKEV2_Profile</li>
+    </ul>
+    <li>Policies > General</li>
+    <li>Policies > Action</li>
+    <ul class="z">
+        <li>/ip ipsec policy group</li>
+        <li>add name=IKEV2_Group</li><br>
+        <li>/ip ipsec policy</li>
+        <li>add group=IKEV2_Group proposal=IKEV2_Proposal template=yes</li>
+    </ul>
+    <li>Peers</li>
+    <ul class="z">
+        <li>/ip ipsec peer</li>
+        <li>add exchange-mode=ike2 name=IKEV2_Peer passive=yes profile=IKEV2_Profile</li>
+    </ul>
+
+    <li>Identites</li>
+    <ul class="z">
+        <li>/ip ipsec identity</li>
+        <li>add generate-policy=port-strict mode-config=IKEv2_MODE peer=IKEV2_Peer policy-template-group=IKEV2_Group secret=mehedi1230</li>
+    </ul>
+    
+</ol>
+<p class="x">BGP Filter</p>
+<ul class="y">
+   <li>BDIX_IN = if (dst in 172.16.0.0/16 && dst-len in 0-32) { reject; }</li>
+   <li>BDIX_IN = accept</li>
+
+</ul>
+<p class="x">MikroTik Password recovary</p><br>
+<a href="https://www.mikrotikpasswordrecovery.net/" target="_blank">MikroTik Password recovary</a>
+
+
+
+<h1>CCNP-CMD</h1>
+<p class="x">VLAN</p>
+<ul>
+   <li>SW1# show vlan brief</li>
+   <li>SW1# show vlan summary</li>
+   <li>SW1# show vlan id 99</li>
+   <li>SW1# show running-config | begin interface GigabitEthernet1/0/15</li>
+   <li>SW1# show interfaces trunk</li>
+
+</ul>
+<p class="x">Truck -1</p>
+<ul class="y">
+   <li>Sw1(config)#Interface GigabitEthernet0/1 </li>
+   <li>Sw1(config-if)# switchport trunk encapsulation dot1q </li>
+   <li>Sw1(config-if)# switchport mode trunk </li>
+   <li>Sw1(config-if)# switchport trunk allowed vlan 10,20 </li>
+</ul>
+<p class="x"> Secondary IP Assaign</p>
+<ul class="y">
+   <li>R1(config)# interface gi0/0/0 </li>
+	<li>R1(config-if)# ip address 10.10.10.254 255.255 </li>
+	<li>R1(config-if)# ip address 172.16.10.254 255.255.255.0 secondary </li>
+	<li>R1(config-if)# ipv6 address 2001:db8:10::254/64 </li>
+	<li>R1(config-if)# ipv6 address 2001:DB8:10:172::254/64 </li>
+	<li>R1(config-if)# interface gi0/0/1 </li>
+	<li>R1(config-if)# ip address 10.20.20.254 255.255.255.0 </li>
+	<li>R1(config-if)# ip address 172.16.20.254 255.255.255.0 secondary </li>
+	<li>R1(config-if)# ipv6 address 2001:db8:20::254/64 </li>
+	<li>R1(config-if)# ipv6 address 2001:db8:20:172::254/64 </li>
+</ul>
+
+<p class="x">Configuring Routed Subinterfaces</p>
+<ul class="y">
+   <li>R2# configure terminal </li>
+		<li>R2(config-if)# int g0/0/1.10 </li>
+		<li>R2(config-subif)# encapsulation dot1Q 10 </li>
+		<li>R2(config-subif)# ip address 10.10.10.2 255.255.255.0 </li>
+		<li>R2(config-subif)# ipv6 address 2001:db8:10::2/64 </li>
+</ul>
+<p class="x">Multilayer switch port can be converted from a Layer 2 switch port by Using ( no switchport )</p>
+<ul class="y">
+   <li>SW1# configure terminal </li>
+		<li>SW1(config)# int gi1/0/14 </li>
+		<li>SW1(config-if)# no switchport </li>
+		<li>SW1(config-if)# ip address 10.20.20.1 255.255.255.0 </li>
+		<li>SW1(config-if)# ipv6 address 2001:db8:20::1/64 </li>
+		<li>SW1(config-if)# no shutdown </li>
+</ul>
+<p class="x">Viewing Device IPv4 Addresses</p>
+<ul class="y">
+   <li>SW1# show ip interface brief</li>
+   <li>SW1# show ip interface brief | exclude unassigned</li>
+   <li>SW1# show ipv6 interface brief</li>
+   <li>SW1# show ipv6 interface brief | exclude unassigned|GigabitEthernet</li>
+</ul>
+<p class="x"> Switching Database Manager (SDM)Templates</p>
+<ul class="y">
+   <li>SW1# show sdm prefer</li>
+   <li></li>
+</ul>
+<p class="x">802.1D, which is the original specification</p>
+<ul class="y">
+   <li>Blocking:   </li>  
+   <li>Listening:  </li>
+   <li>Learning:   </li>
+   <li>Forwarding: </li>
+   <li>Broken:     </li>
+</ul>
+	<p class="x">Per-VLAN Spanning Tree (PVST)              </p>
+   
+	<p class="x">Per-VLAN Spanning Tree Plus (PVST+)        </p>
+	<p class="x">802.1W Rapid Spanning Tree Protocol (RSTP) </p>
+	<p class="x">802.1S Multiple Spanning Tree Protocol (MST</p>
+   
+     <p class="x">STP</p> 
+     <ul class="y">
+         <li>Designated port (DP) = Root SW er sathe sora-sori connected port holo "Designated port (DP)"</li>
+         <li>Root port (RP) =Designated port (DP) er thik oposit port tai holo Root port (RP)  </li>
+         <li>ALTERNET port = kono sw jodi ekta RP thake tahole baki port golo ALT ba DP port hobe</li>
+         <li>SW4# show spanning-tree root</li>
+         <li>SW1# show spanning-tree vlan 1</li>
+         <li>SW3# show spanning-tree interface gi1/0/1</li>
+         <li>SW3# show spanning-tree interface gi1/0/1 detail</li>
+         <li>SW1# show spanning-tree vlan 10 detail</li>
+      </ul>  
+       <p class="x">STP Port Cost</p> 
+       <ul class="y">
+         <li>SW3# conf t</li>
+         <li>SW3(config)# interface gi1/0/1</li>
+         <li>SW3(config-if)# spanning-tree cost 1</li>
+       </ul> 
+      <p class="x">STP priority Setup </p>
+      <ul class="y">
+         <li>Switch#configure terminal </li>
+         <li>Switch(config)#spanning-tree vlan 1 priority 0</li>
+         <li>Switch(config)#exit</li>
+      </ul>
+      <p class="x">Primary and Secondary Wise STP setup root setup</p>
+      <ul class="y">
+         <li>SW-2(config)#spanning-tree vlan 1 root primary</li>
+         <li>SW-3(config)#spanning-tree vlan 1 root secondary</li>
+      </ul>
+      <p class="x">Modifying STP Port Priority</p>
+      <ul class="y"> 
+         <li>SW4# configure terminal</li>
+         <li>SW4(config)# interface gi1/0/6</li>
+         <li>SW4(config-if)# spanning-tree port-priority 64</li>
+         <li>Port Priority 32 kore barate hoy </li>
+      </ul>
+     <p class="x">Root Guard</p>
+     <ul class="y">
+      <li>eita korte hoy amar je SW ta Root bridge sekhane , karon root SW er shathe connected kono SW jar root priority hothat kome gelo thokhon oi SW ta to Root SW hoye jabe , she karone amar Root SW jate oi SW theke Superio BPDU na received kore she jonno RW sw shathe connected SW golur link e " Root Gurd " enanle korte hobe</li>
+      <li>spanning-tree guard root</li>
+     </ul>
+<h1>DBMS</h1>
+<ul class="y">
+   <li>View Database = </li>
+   <ul>SHOW DATABASES ;</ul>
+   <li>Create database = </li>
+   <ul>CREATE DATABASE College ;</ul>
+   <li>Delete database = </li>
+   <ul>DROP DATABASE college ;</ul>
+   <li>Create a table inside the database = </li> 
+   <ul> CREATE TABLE Student</ul>
+   <ul>(</ul>
+   <ul>Roll int(5),</ul>
+   <ul>Name varchar(20),</ul>
+   <ul>Gender varchar(10),</ul>
+   <ul>Age int(5),</ul>
+   <ul>GPA double(3,2),</ul>
+   <ul>City varchar(15),</ul>
+   <ul>PRIMARY KEY (Roll)</ul>
+   <ul>);</ul>
+   <li>Rename Table = </li>
+   <ul>RENAME TABLE student TO NSTU</ul>
+   <li>Delete a Table </li>
+   <ul>DROP TABLE nstu ;</ul>
+
+</ul>
+<h1>Red Hat Linux</h1>
+<ol class="y">
+   <li> Default Prompt</li>
+   <ul>the default prompt ends with a $ character.</ul>
+   <ul>The $ is replaced by a # i f t h e shell is running as the superuser, root.</ul>
+   <li>Virtual Console Change</li>
+   <ul>Ctrl+Alt+(F2...F6)</ul>
+   <li>Physical Virtual Console </li>
+   <ul>Ctrl+Alt+F1</ul>
+   <li>Commands entered at the shell prompt have three basic pa rts:</li>
+   <ul>Command</ul>
+   <ul>Option</ul>
+   <ul>Argument</ul>
+   <li>Command</li>
+   <ul>The command is the name of the program to run.</ul>
+   <li>Argument</li>
+   <ul> O ptions normally sta rt with one or 
+      two das hes (-a or - - all, for example)</ul>
+      <li>usermod - L   morgan</li>
+      <ul>(usermod) a a command</ul>
+      <ul>an option  ( - L)</ul>
+      <ul>an a rgument (morgan).</ul>
+      <li> Exit command</li>
+      <ul>Ctrl+D.</ul>
+
+      
+</ol>
+
+<div class="clear-div-1"></div>
+
+<div class="table_group_2_row">
+   <div class="div_4">
+      <p class="x">1G (Gigabit Ethernet) SFP-এর TX ও RX Power Range</p>  
+      <table >
+         <thead>
+             <tr>
+                 <th>SFP মডিউল টাইপ</th>
+                 <th>TX Power Range (dBm)</th>
+                 <th>RX Power Range (dBm)</th>
+             </tr>
+         </thead>
+         <tbody>
+             <tr>
+                 <td>1GBASE-SX (850nm Multimode, MM)</td>
+                 <td>-9 dBm to -3 dBm</td>
+                 <td>-17 dBm to -3 dBm</td>
+             </tr>
+             <tr>
+                 <td>1GBASE-LX (1310nm Singlemode, SM)</td>
+                 <td>-9 dBm to -3 dBm</td>
+                 <td>-19 dBm to -3 dBm</td>
+             </tr>
+             <tr>
+                 <td>1GBASE-EX (1310nm, 40km SM)</td>
+                 <td>-5 dBm to 0 dBm</td>
+                 <td>-22 dBm to -3 dBm</td>
+             </tr>
+             <tr>
+                 <td>1GBASE-ZX (1550nm, 70km SM)</td>
+                 <td>0 dBm to 5 dBm</td>
+                 <td>-24 dBm to -3 dBm</td>
+             </tr>
+         </tbody>
+     </table>
+   </div>
+
+   <div class="table_group_2_column">
+      <p class="x">10G SFP+ TX ও RX Power Range</p>
+      <div class="div_4">
+        <table>
+            <thead>
+                <tr>
+                    <th>SFP+ মডিউল টাইপ</th>
+                    <th>TX Power Range (dBm)</th>
+                    <th>RX Power Range (dBm)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>10GBASE-SR (850nm Multimode, MM, 300m)</td>
+                    <td>-7.3 dBm to -1 dBm</td>
+                    <td>-10.3 dBm to 0 dBm</td>
+                </tr>
+                <tr>
+                    <td>10GBASE-LR (1310nm Singlemode, SM, 10km)</td>
+                    <td>-8.2 dBm to 0.5 dBm</td>
+                    <td>-14.4 dBm to 0.5 dBm</td>
+                </tr>
+                <tr>
+                    <td>10GBASE-ER (1550nm SM, 40km)</td>
+                    <td>-4.7 dBm to 4 dBm</td>
+                    <td>-17 dBm to -1 dBm</td>
+                </tr>
+                <tr>
+                    <td>10GBASE-ZR (1550nm SM, 80km)</td>
+                    <td>0 dBm to 5 dBm</td>
+                    <td>-24 dBm to -3 dBm</td>
+                </tr>
+            </tbody>
+        </table>
+      </div>
+      </div>
+      
+</div>
+<div class="clear-div-1"></div>
+
+<h2>1G SFP (Gigabit Ethernet) Power Range:</h2>
+<table>
+    <thead>
+        <tr>
+            <th>প্যারামিটার</th>
+            <th>মাল্টিমোড ফাইবার</th>
+            <th>সিঙ্গেলমোড ফাইবার</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>TX Power (Transmit)</td>
+            <td>-9.5 dBm থেকে -3 dBm</td>
+            <td>-9.5 dBm থেকে 0 dBm</td>
+        </tr>
+        <tr>
+            <td>RX Power (Receive)</td>
+            <td>-17 dBm থেকে 0 dBm</td>
+            <td>-23 dBm থেকে 0 dBm</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>10G SFP+ Power Range:</h2>
+<table>
+    <thead>
+        <tr>
+            <th>প্যারামিটার</th>
+            <th>মাল্টিমোড ফাইবার</th>
+            <th>সিঙ্গেলমোড ফাইবার</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>TX Power (Transmit)</td>
+            <td>-8.2 dBm থেকে -1 dBm</td>
+            <td>-8.2 dBm থেকে 2 dBm</td>
+        </tr>
+        <tr>
+            <td>RX Power (Receive)</td>
+            <td>-12.6 dBm থেকে 0 dBm</td>
+            <td>-14.4 dBm থেকে 0 dBm</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>ব্যাখ্যা:</h2>
+<ul>
+    <li><strong>মাল্টিমোড ফাইবার:</strong> সাধারণত কম দূরত্বের জন্য ব্যবহৃত হয় (উদাহরণ: 550 মিটার পর্যন্ত)।</li>
+    <li><strong>সিঙ্গেলমোড ফাইবার:</strong> দীর্ঘ দূরত্বের জন্য ব্যবহৃত হয় (উদাহরণ: 10 কিমি, 40 কিমি, বা তার বেশি)।</li>
+</ul>
+<h2>SFP Power Range Table for 1G and 10G Ethernet SFP/SFP+ Modules</h2>
+    <table>
+        <tr>
+            <th>Module Type</th>
+            <th>TX Power Range (dBm)</th>
+            <th>RX Power Range (dBm)</th>
+            <th>Distance (Max)</th>
+            <th>Wavelength (nm)</th>
+        </tr>
+        <tr>
+            <td>1GBASE-SX (Multi-Mode)</td>
+            <td>-9.5 to -4</td>
+            <td>-17 to 0</td>
+            <td>550m (OM2)</td>
+            <td>850nm</td>
+        </tr>
+        <tr>
+            <td>1GBASE-LX (Single-Mode)</td>
+            <td>-9.5 to -3</td>
+            <td>-19 to -3</td>
+            <td>10 km</td>
+            <td>1310nm</td>
+        </tr>
+        <tr>
+            <td>1GBASE-ZX (Single-Mode)</td>
+            <td>0 to 5</td>
+            <td>-24 to -3</td>
+            <td>70 km</td>
+            <td>1550nm</td>
+        </tr>
+        <tr>
+            <td>10GBASE-SR (Multi-Mode)</td>
+            <td>-7.3 to -1</td>
+            <td>-11.1 to 0.5</td>
+            <td>300m (OM3)</td>
+            <td>850nm</td>
+        </tr>
+        <tr>
+            <td>10GBASE-LR (Single-Mode)</td>
+            <td>-8.2 to 0.5</td>
+            <td>-14.4 to 0.5</td>
+            <td>10 km</td>
+            <td>1310nm</td>
+        </tr>
+        <tr>
+            <td>10GBASE-ER (Single-Mode)</td>
+            <td>-4.7 to 4</td>
+            <td>-17 to -1</td>
+            <td>40 km</td>
+            <td>1310nm</td>
+        </tr>
+        <tr>
+            <td>10GBASE-ZR (Single-Mode)</td>
+            <td>0 to 5</td>
+            <td>-24 to -7</td>
+            <td>80 km</td>
+            <td>1550nm</td>
+        </tr>
+    </table>
+    
+    <h2>সিস্টেম LED</h2>
+<table>
+    <thead>
+        <tr>
+            <th>LED অবস্থা</th>
+            <th>অর্থ</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>LED বন্ধ থাকলে</td>
+            <td>সিস্টেমটি চালু নেই।</td>
+        </tr>
+        <tr>
+            <td>LED সবুজ থাকলে</td>
+            <td>সিস্টেমটি স্বাভাবিকভাবে কাজ করছে।</td>
+        </tr>
+        <tr>
+            <td>LED অ্যাম্বার (হলুদ-কমলা) থাকলে</td>
+            <td>সিস্টেমটি পাওয়ার পাচ্ছে কিন্তু সঠিকভাবে কাজ করছে না।</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>রিডান্ডেন্ট পাওয়ার সিস্টেম (RPS) LED</h2>
+<table>
+    <thead>
+        <tr>
+            <th>LED অবস্থা</th>
+            <th>অর্থ</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>LED বন্ধ থাকলে</td>
+            <td>RPS বন্ধ আছে বা এটি সঠিকভাবে সংযুক্ত নেই।</td>
+        </tr>
+        <tr>
+            <td>LED সবুজ থাকলে</td>
+            <td>RPS সংযুক্ত আছে এবং ব্যাকআপ পাওয়ার দেওয়ার জন্য প্রস্তুত।</td>
+        </tr>
+        <tr>
+            <td>LED সবুজ জ্বলজ্বল করলে</td>
+            <td>RPS সংযুক্ত আছে কিন্তু এটি অন্য একটি ডিভাইসকে পাওয়ার সরবরাহ করছে, তাই এটি বর্তমানে unavailable (অপ্রাপ্য)।</td>
+        </tr>
+        <tr>
+            <td>LED অ্যাম্বার (হলুদ-কমলা) থাকলে</td>
+            <td>RPS স্ট্যান্ডবাই মোডে আছে বা কোনো ত্রুটির অবস্থায় আছে।</td>
+        </tr>
+        <tr>
+            <td>LED অ্যাম্বার জ্বলজ্বল করলে</td>
+            <td>সুইচের অভ্যন্তরীণ পাওয়ার সাপ্লাই ব্যর্থ হয়েছে, এবং RPS পাওয়ার সরবরাহ করছে।</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>পোর্ট স্ট্যাটাস LED</h2>
+<table>
+    <thead>
+        <tr>
+            <th>LED অবস্থা</th>
+            <th>অর্থ</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>LED বন্ধ থাকলে</td>
+            <td>পোর্টে কোনো লিংক নেই বা পোর্টটি অ্যাডমিনিস্ট্রেটিভলি শাট ডাউন করা হয়েছে।</td>
+        </tr>
+        <tr>
+            <td>LED সবুজ থাকলে</td>
+            <td>পোর্টে একটি লিংক রয়েছে।</td>
+        </tr>
+        <tr>
+            <td>LED সবুজ জ্বলজ্বল করলে</td>
+            <td>পোর্টে কার্যকলাপ রয়েছে এবং পোর্টটি ডেটা পাঠানো বা গ্রহণ করছে।</td>
+        </tr>
+        <tr>
+            <td>LED সবুজ-অ্যাম্বার পর্যায়ক্রমে জ্বললে</td>
+            <td>লিংকে কোনো ত্রুটি রয়েছে।</td>
+        </tr>
+        <tr>
+            <td>LED অ্যাম্বার (হলুদ-কমলা) থাকলে</td>
+            <td>পোর্টটি ফরওয়ার্ডিং ডোমেইনে কোনো লুপ তৈরি না হয় তা নিশ্চিত করতে ব্লক করা হয়েছে এবং এটি ডেটা ফরওয়ার্ড করছে না (সাধারণত, পোর্টগুলি সক্রিয় হওয়ার পর প্রথম 30 সেকেন্ড এই অবস্থায় থাকে)।</td>
+        </tr>
+        <tr>
+            <td>LED অ্যাম্বার জ্বলজ্বল করলে</td>
+            <td>পোর্টটি ফরওয়ার্ডিং ডোমেইনে সম্ভাব্য লুপ প্রতিরোধ করতে ব্লক করা হয়েছে।</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>পোর্ট ডুপ্লেক্স LED</h2>
+<table>
+    <thead>
+        <tr>
+            <th>LED অবস্থা</th>
+            <th>অর্থ</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>পোর্ট LED বন্ধ থাকলে</td>
+            <td>পোর্টটি হাফ-ডুপ্লেক্স মোডে রয়েছে।</td>
+        </tr>
+        <tr>
+            <td>পোর্ট LED সবুজ থাকলে</td>
+            <td>পোর্টটি ফুল-ডুপ্লেক্স মোডে রয়েছে।</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>পোর্ট স্পিড LED</h2>
+<table>
+    <thead>
+        <tr>
+            <th>LED অবস্থা</th>
+            <th>অর্থ</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>LED বন্ধ থাকলে</td>
+            <td>পোর্টটি 10 Mbps গতিতে কাজ করছে।</td>
+        </tr>
+        <tr>
+            <td>LED সবুজ থাকলে</td>
+            <td>পোর্টটি 100 Mbps গতিতে কাজ করছে।</td>
+        </tr>
+        <tr>
+            <td>LED সবুজ জ্বলজ্বল করলে</td>
+            <td>পোর্টটি 1000 Mbps (1 Gbps) গতিতে কাজ করছে।</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>পাওয়ার ওভার ইথারনেট (PoE) মোড LED</h2>
+<table>
+    <thead>
+        <tr>
+            <th>LED অবস্থা</th>
+            <th>অর্থ</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>LED বন্ধ থাকলে</td>
+            <td>PoE মোড নির্বাচিত নেই এবং কোনো পোর্টকে পাওয়ার দেওয়া থেকে বঞ্চিত করা হয়নি বা কোনো ত্রুটির অবস্থায় নেই।</td>
+        </tr>
+        <tr>
+            <td>LED অ্যাম্বার (হলুদ-কমলা) জ্বলজ্বল করলে</td>
+            <td>PoE মোড নির্বাচিত নেই তবে অন্তত একটি পোর্টকে পাওয়ার দেওয়া থেকে বঞ্চিত করা হয়েছে বা সেই পোর্টে PoE ত্রুটি রয়েছে।</td>
+        </tr>
+        <tr>
+            <td>LED সবুজ থাকলে</td>
+            <td>PoE মোড নির্বাচিত হয়েছে এবং পোর্ট LED গুলি বিভিন্ন রঙে জ্বলবে যার বিভিন্ন অর্থ রয়েছে:</td>
+        </tr>
+        <tr>
+            <td>পোর্ট LED বন্ধ থাকলে</td>
+            <td>PoE বন্ধ আছে।</td>
+        </tr>
+        <tr>
+            <td>পোর্ট LED সবুজ থাকলে</td>
+            <td>PoE চালু আছে।</td>
+        </tr>
+        <tr>
+            <td>পোর্ট LED সবুজ-অ্যাম্বার পর্যায়ক্রমে জ্বললে</td>
+            <td>PoE দেওয়া থেকে বঞ্চিত করা হয়েছে কারণ পাওয়ার ডিভাইসকে পাওয়ার সরবরাহ করলে সুইচের পাওয়ার ক্ষমতা অতিক্রম করবে।</td>
+        </tr>
+        <tr>
+            <td>LED অ্যাম্বার জ্বলজ্বল করলে</td>
+            <td>PoE বন্ধ আছে কারণ কোনো ত্রুটি রয়েছে।</td>
+        </tr>
+        <tr>
+            <td>LED অ্যাম্বার থাকলে</td>
+            <td>পোর্টের জন্য PoE নিষ্ক্রিয় করা হয়েছে।</td>
+        </tr>
+    </tbody>
+</table>
+
+<h1>Cisco Switch Boot Log</h1>
+<div class="log-output">
+    switch: set BOOT=flash:/c2960-lanbasek9-mz.122-55.SE7/c2960-lanbasek9-mz.122-55.SE7.bin<br>
+    (output omitted)<br><br>
+    switch: flash_init<br>
+    Initializing Flash...<br>
+    flashfs[0]: 2 files, 1 directories<br>
+    flashfs[0]: 0 orphaned files, 0 orphaned directories<br>
+    flashfs[0]: Total bytes: 32514048<br>
+    flashfs[0]: Bytes used: 11838464<br>
+    flashfs[0]: Bytes available: 20675584<br>
+    flashfs[0]: flashfs fsck took 10 seconds.<br>
+    ...done Initializing Flash.<br><br>
+    switch: dir flash:<br>
+    Directory of flash:/<br>
+    2  -rwx  11834846                 c2960-lanbasek9-mz.150-2.SE8.bin<br>
+    3  -rwx  2072                     multiple-fs<br><br>
+    switch: BOOT=flash:c2960-lanbasek9-mz.150-2.SE8.bin<br><br>
+    switch: set<br>
+    BOOT=flash:c2960-lanbasek9-mz.150-2.SE8.bin<br>
+    (output omitted)<br><br>
+    switch: boot
+</div>
+<h1>Cisco Switch MIDX Configaration</h1>
+    <div class="log-output">
+        S1#config terminal<br>
+        You must enter the exact and full command.<br>
+        S1#configure terminal<br>
+        Enter configuration commands, one per line. End with CNTL/Z.<br>
+        S1(config)#interface FastEthernet0/1<br>
+        S1(config-if)#duplex auto<br>
+        S1(config-if)#speed auto<br>
+        S1(config-if)#mdix auto<br>
+    </div>
+
+    <h2>S1 SSH Configuration</h2>
+    <pre>
+S1# show ip ssh
+S1(config)# ip domain-name cisco.com
+S1(config)# crypto key generate rsa
+How many bits in the modulus [512]: 1024
+S1(config)# username admin secret ccna
+S1(config)# line vty 0 15
+S1(config-line)# transport input ssh
+S1(config-line)# login local
+S1(config-line)# exit
+S1(config)# ip ssh version 2
+    </pre>
+    
+    <h2>R1 Interface Configuration</h2>
+    <pre>
+R1(config)# interface gigabitethernet 0/0/0
+R1(config-if)# ip address 192.168.10.1 255.255.255.0
+R1(config-if)# ipv6 address 2001:db8:acad:1::1/64
+R1(config-if)# description Link to LAN 1
+R1(config-if)# no shutdown
+R1(config-if)# exit
+
+R1(config)# interface gigabitethernet 0/0/1
+R1(config-if)# ip address 192.168.11.1 255.255.255.0
+R1(config-if)# ipv6 address 2001:db8:acad:2::1/64
+R1(config-if)# description Link to LAN 2
+R1(config-if)# no shutdown
+R1(config-if)# exit
+
+R1(config)# interface serial 0/0/0
+R1(config-if)# ip address 209.165.200.225 255.255.255.252
+R1(config-if)# ipv6 address 2001:db8:acad:3::225/64
+R1(config-if)# description Link to R2
+R1(config-if)# no shutdown
+R1(config-if)# exit
+R1(config)#
+    </pre>
+    <style>
+        
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; background: #0e0101; }
+        table th, table td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        table th { background-color: #2c3e50; color: rgb(194, 52, 52); }
+        pre { background: #070a04; padding: 10px; border-left: 3px solid #2c3e50; overflow-x: auto; }
+    </style>
+
+    <h1>Cisco vs Juniper BGP Configuration Comparison</h1>
+    <p>এই ডকুমেন্টটিতে Cisco এবং Juniper-এর BGP কনফিগারেশন কমান্ডগুলোর তুলনা করা হয়েছে।</p>
+
+    <h2>1. Basic BGP Configuration</h2>
+    <table>
+        <tr>
+            <th>Function</th>
+            <th>Cisco IOS</th>
+            <th>Juniper Junos OS</th>
+        </tr>
+        <tr>
+            <td>Router ID সেট করা</td>
+            <td><pre>router bgp 10<br>bgp router-id 10.10.0.1</pre></td>
+            <td><pre>set routing-options router-id 10.10.0.1</pre></td>
+        </tr>
+        <tr>
+            <td>Neighbor সংযোগ</td>
+            <td><pre>neighbor 10.10.0.2 remote-as 10</pre></td>
+            <td><pre>set protocols bgp group IBGP-PEER neighbor 10.10.0.2</pre></td>
+        </tr>
+        <tr>
+            <td>Update-source loopback</td>
+            <td><pre>neighbor 10.10.0.2 update-source loopback 0</pre></td>
+            <td><pre>set protocols bgp group IBGP-PEER local-address 10.10.0.1</pre></td>
+        </tr>
+        <tr>
+            <td>Activate IPv4 unicast</td>
+            <td><pre>address-family ipv4 unicast<br>neighbor 10.10.0.2 activate</pre></td>
+            <td><pre>set protocols bgp group IBGP-PEER family inet unicast</pre></td>
+        </tr>
+        <tr>
+            <td>Route Advertisement</td>
+            <td><pre>network 10.10.0.0 mask 255.255.252.0</pre></td>
+            <td><pre>set policy-options policy-statement EXPORT term 1 from route-filter 10.10.0.0/22 exact<br>set policy-options policy-statement EXPORT term 1 then accept<br>set protocols bgp group IBGP-PEER export EXPORT</pre></td>
+        </tr>
+    </table>
+
+    <h2>2. Route Reflector Configuration</h2>
+    <table>
+        <tr>
+            <th>Function</th>
+            <th>Cisco IOS</th>
+            <th>Juniper Junos OS</th>
+        </tr>
+        <tr>
+            <td>Route Reflector Client সেট করা</td>
+            <td><pre>neighbor 10.10.0.2 route-reflector-client</pre></td>
+            <td><pre>set protocols bgp group IBGP-PEER neighbor 10.10.0.2 route-reflector-client</pre></td>
+        </tr>
+        <tr>
+            <td>Next-hop-self সেট করা</td>
+            <td><pre>neighbor 10.10.0.2 next-hop-self</pre></td>
+            <td><pre>Juniper-এ Default (প্রয়োজন হলে policy ব্যবহার করা যায়)</pre></td>
+        </tr>
+        <tr>
+            <td>Send Community</td>
+            <td><pre>neighbor 10.10.0.2 send-community</pre></td>
+            <td><pre>set protocols bgp group IBGP-PEER neighbor 10.10.0.2 send-community</pre></td>
+        </tr>
+    </table>
+
+    <h2>3. Show Commands</h2>
+    <table>
+        <tr>
+            <th>Function</th>
+            <th>Cisco IOS</th>
+            <th>Juniper Junos OS</th>
+        </tr>
+        <tr>
+            <td>BGP Summary দেখার জন্য</td>
+            <td><pre>show ip bgp summary</pre></td>
+            <td><pre>show bgp summary</pre></td>
+        </tr>
+        <tr>
+            <td>Neighbor Information</td>
+            <td><pre>show ip bgp neighbors</pre></td>
+            <td><pre>show bgp neighbor</pre></td>
+        </tr>
+        <tr>
+            <td>Configuration দেখতে</td>
+            <td><pre>show running-config</pre></td>
+            <td><pre>show configuration protocols bgp</pre></td>
+        </tr>
+    </table>
+
+    <h2>4. Configuration Structure</h2>
+    <p><strong>Cisco:</strong> Command-based; লিনিয়ার ফ্ল্যাট স্ট্রাকচার</p>
+    <pre>
+    router bgp 10
+     bgp router-id 10.10.0.1
+     neighbor 10.10.0.2 remote-as 10
+     address-family ipv4 unicast
+      neighbor 10.10.0.2 activate
+    </pre>
+    <p><strong>Juniper:</strong> Hierarchical; Configuration tree-based structure</p>
+    <pre>
+    set routing-options router-id 10.10.0.1
+    set protocols bgp group IBGP-PEER type internal
+    set protocols bgp group IBGP-PEER neighbor 10.10.0.2
+    set protocols bgp group IBGP-PEER family inet unicast
+    </pre>
+
+    <h2>5. Save Configuration</h2>
+    <table>
+        <tr>
+            <th>Action</th>
+            <th>Cisco IOS</th>
+            <th>Juniper Junos OS</th>
+        </tr>
+        <tr>
+            <td>Configuration Save</td>
+            <td><pre>write memory</pre></td>
+            <td><pre>commit</pre></td>
+        </tr>
+        <tr>
+            <td>Configuration View</td>
+            <td><pre>show startup-config</pre></td>
+            <td><pre>show configuration</pre></td>
+        </tr>
+    </table>
+    <h1>সিসকো এবং জুনিপার কমান্ড তুলনা</h1>
+
+<h2>1. কনফিগারেশন মোড:</h2>
+
+<h3>সিসকো IOS:</h3>
+<pre><code>conf t</code></pre>
+<p><code>conf t</code> কমান্ডটি কনফিগারেশন মোডে প্রবেশ করে।</p>
+
+<h3>জুনোস OS:</h3>
+<pre><code>configure</code></pre>
+<p><code>configure</code> কমান্ডটি কনফিগারেশন মোডে প্রবেশ করে।</p>
+
+<h2>2. BGP কনফিগারেশন:</h2>
+
+<h3>সিসকো IOS:</h3>
+<pre><code>router bgp 10
+ bgp router-id 10.10.0.1
+ neighbor IBGP-PEER peer-group
+ neighbor IBGP-PEER remote-as 10
+ neighbor IBGP-PEER update-source loopback0
+ neighbor 10.10.0.2 peer-group IBGP-PEER
+ address-family ipv4 unicast
+  neighbor IBGP-PEER activate
+  neighbor IBGP-PEER next-hop-self
+  neighbor IBGP-PEER route-reflector-client</code></pre>
+<ul>
+    <li><code>router bgp</code> দিয়ে BGP প্রসেস শুরু হয়।</li>
+    <li><code>neighbor</code> দিয়ে পিয়ার গ্রুপ এবং নেইবার কনফিগার করা হয়।</li>
+    <li><code>address-family</code> দিয়ে IPv4 ইউনিকাস্ট অ্যাক্টিভেট করা হয়।</li>
+</ul>
+
+<h3>জুনোস OS:</h3>
+<pre><code>set routing-options autonomous-system 10
+set routing-options router-id 10.10.0.1
+set protocols bgp group IBGP-PEER type internal
+set protocols bgp group IBGP-PEER local-address 10.10.0.1
+set protocols bgp group IBGP-PEER neighbor 10.10.0.2
+set protocols bgp group IBGP-PEER family inet unicast
+set protocols bgp group IBGP-PEER cluster 10.10.0.1</code></pre>
+<ul>
+    <li><code>set routing-options autonomous-system</code> দিয়ে AS নাম্বার সেট করা হয়।</li>
+    <li><code>set protocols bgp group</code> দিয়ে BGP গ্রুপ তৈরি করা হয়।</li>
+    <li><code>family inet unicast</code> দিয়ে IPv4 ইউনিকাস্ট অ্যাক্টিভেট করা হয়।</li>
+    <li><code>cluster</code> দিয়ে Route Reflector ক্লাস্টার আইডি সেট করা হয়।</li>
+</ul>
+
+<h2>3. নেক্সট-হপ সেলফ:</h2>
+
+<h3>সিসকো IOS:</h3>
+<pre><code>neighbor IBGP-PEER next-hop-self</code></pre>
+<p><code>next-hop-self</code> কমান্ডটি ব্যবহার করে নেক্সট হপ হিসেবে নিজেকে advertise করা হয়।</p>
+
+<h3>জুনোস OS:</h3>
+<pre><code>set protocols bgp group IBGP-PEER export NEXT-HOP-SELF
+set policy-options policy-statement NEXT-HOP-SELF term 1 then next-hop self</code></pre>
+<p><code>next-hop self</code> পলিসি তৈরি করে নেক্সট হপ হিসেবে নিজেকে advertise করা হয়।</p>
+
+<h2>4. রুট রিফ্লেক্টর ক্লায়েন্ট:</h2>
+
+<h3>সিসকো IOS:</h3>
+<pre><code>neighbor IBGP-PEER route-reflector-client</code></pre>
+<p><code>route-reflector-client</code> কমান্ডটি ব্যবহার করে ক্লায়েন্ট রাউটারকে Route Reflector ক্লায়েন্ট হিসেবে কনফিগার করা হয়।</p>
+
+<h3>জুনোস OS:</h3>
+<pre><code>set protocols bgp group IBGP-PEER cluster 10.10.0.1</code></pre>
+<p><code>cluster</code> কমান্ডটি ব্যবহার করে Route Reflector ক্লাস্টার আইডি সেট করা হয়।</p>
+
+<h2>5. স্ট্যাটিক রুট যোগ করা:</h2>
+
+<h3>সিসকো IOS:</h3>
+<pre><code>ip route 10.10.0.0 255.255.252.0 null0</code></pre>
+<p><code>ip route</code> কমান্ডটি ব্যবহার করে স্ট্যাটিক রুট যোগ করা হয়।</p>
+
+<h3>জুনোস OS:</h3>
+<pre><code>set routing-options static route 10.10.0.0/22 discard</code></pre>
+<p><code>static route</code> কমান্ডটি ব্যবহার করে স্ট্যাটিক রুট যোগ করা হয়।</p>
+
+<h2>6. BGP স্ট্যাটাস চেক করা:</h2>
+
+<h3>সিসকো IOS:</h3>
+<pre><code>show bgp ipv4 unicast summary</code></pre>
+<p><code>show bgp summary</code> কমান্ডটি ব্যবহার করে BGP স্ট্যাটাস চেক করা হয়।</p>
+
+<h3>জুনোস OS:</h3>
+<pre><code>show bgp summary</code></pre>
+<p><code>show bgp summary</code> কমান্ডটি ব্যবহার করে BGP স্ট্যাটাস চেক করা হয়।</p>
+
+<h2>7. কমিউনিটি অ্যাট্রিবিউট পাঠানো:</h2>
+
+<h3>সিসকো IOS:</h3>
+<pre><code>neighbor IBGP-PEER send-community</code></pre>
+<p><code>send-community</code> কমান্ডটি ব্যবহার করে কমিউনিটি অ্যাট্রিবিউট পাঠানো হয়।</p>
+
+<h3>জুনোস OS:</h3>
+<pre><code>set protocols bgp group IBGP-PEER export SEND-COMMUNITY
+set policy-options policy-statement SEND-COMMUNITY term 1 then community add COMMUNITY-VALUE</code></pre>
+<p><code>community</code> পলিসি তৈরি করে কমিউনিটি অ্যাট্রিবিউট পাঠানো হয়।</p>
+
+<h2>8. কনফিগারেশন সেভ করা:</h2>
+
+<h3>সিসকো IOS:</h3>
+<pre><code>wr</code></pre>
+<p><code>wr</code> কমান্ডটি ব্যবহার করে কনফিগারেশন সেভ করা হয়।</p>
+
+<h3>জুনোস OS:</h3>
+<pre><code>commit</code></pre>
+<p><code>commit</code> কমান্ডটি ব্যবহার করে কনফিগারেশন সেভ করা হয়।</p>
+
+<h2>সারসংক্ষেপ:</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>ফিচার</th>
+            <th>সিসকো IOS</th>
+            <th>জুনোস OS</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>কনফিগারেশন মোড</td>
+            <td><code>conf t</code></td>
+            <td><code>configure</code></td>
+        </tr>
+        <tr>
+            <td>BGP প্রসেস শুরু</td>
+            <td><code>router bgp 10</code></td>
+            <td><code>set routing-options autonomous-system 10</code></td>
+        </tr>
+        <tr>
+            <td>রাউটার আইডি সেট</td>
+            <td><code>bgp router-id 10.10.0.1</code></td>
+            <td><code>set routing-options router-id 10.10.0.1</code></td>
+        </tr>
+        <tr>
+            <td>পিয়ার গ্রুপ তৈরি</td>
+            <td><code>neighbor IBGP-PEER peer-group</code></td>
+            <td><code>set protocols bgp group IBGP-PEER</code></td>
+        </tr>
+        <tr>
+            <td>নেক্সট-হপ সেলফ</td>
+            <td><code>neighbor IBGP-PEER next-hop-self</code></td>
+            <td><code>set policy-options policy-statement NEXT-HOP-SELF</code></td>
+        </tr>
+        <tr>
+            <td>রুট রিফ্লেক্টর ক্লায়েন্ট</td>
+            <td><code>neighbor IBGP-PEER route-reflector-client</code></td>
+            <td><code>set protocols bgp group IBGP-PEER cluster 10.10.0.1</code></td>
+        </tr>
+        <tr>
+            <td>স্ট্যাটিক রুট যোগ</td>
+            <td><code>ip route 10.10.0.0 255.255.252.0 null0</code></td>
+            <td><code>set routing-options static route 10.10.0.0/22 discard</code></td>
+        </tr>
+        <tr>
+            <td>BGP স্ট্যাটাস চেক</td>
+            <td><code>show bgp ipv4 unicast summary</code></td>
+            <td><code>show bgp summary</code></td>
+        </tr>
+        <tr>
+            <td>কনফিগারেশন সেভ</td>
+            <td><code>wr</code></td>
+            <td><code>commit</code></td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>মূল পার্থক্য:</h2>
+<ul>
+    <li><strong>কমান্ড সিনট্যাক্স:</strong> সিসকো IOS এবং জুনোস OS-এর কমান্ড সিনট্যাক্স সম্পূর্ণ আলাদা। সিসকো IOS লাইন-বাই-লাইন কনফিগারেশন করে, অন্যদিকে জুনোস OS হায়ারার্কিক্যাল কনফিগারেশন করে।</li>
+    <li><strong>পলিসি বেসড কনফিগারেশন:</strong> জুনোস OS-এ পলিসি বেসড কনফিগারেশন বেশি ব্যবহৃত হয়, যেমন <code>policy-statement</code> এবং <code>term</code>।</li>
+    <li><strong>কনফিগারেশন সেভ:</strong> সিসকোতে <code>wr</code> কমান্ড ব্যবহার করা হয়, জুনোসে <code>commit</code> কমান্ড ব্যবহার করা হয়।</li>
+</ul>
+<h1>সিসকো এবং জুনিপারে LACP কনফিগারেশন পার্থক্য</h1>
+
+<h2>সিসকো কনফিগারেশন:</h2>
+
+<h3>ইথারচ্যানেল (Port-channel) কনফিগারেশন:</h3>
+<pre><code>interface Port-channel3
+  description ACCESS-RW-LINK-LACP
+  switchport mode trunk
+  switchport trunk allowed vlan 1-4049</code></pre>
+
+<h3>ফিজিক্যাল ইন্টারফেসে LACP কনফিগারেশন:</h3>
+<pre><code>interface Ethernet1/5
+  description ACCESS-RW-LINK
+  switchport mode trunk
+  switchport trunk allowed vlan 1-4049
+  channel-group 3 mode active</code></pre>
+
+<h2>জুনিপার কনফিগারেশন:</h2>
+
+<h3>অ্যাগ্রিগেটেড ইথারনেট (ae) ইন্টারফেস কনফিগারেশন:</h3>
+<pre><code>set interfaces ae3 description "ACCESS-RW-LINK-LACP"
+set interfaces ae3 unit 0 family ethernet-switching interface-mode trunk
+set interfaces ae3 unit 0 family ethernet-switching vlan members 1-4049</code></pre>
+
+<h3>ফিজিক্যাল ইন্টারফেসে LACP কনফিগারেশন:</h3>
+<pre><code>set interfaces ge-0/0/5 description "ACCESS-RW-LINK"
+set interfaces ge-0/0/5 ether-options 802.3ad ae3</code></pre>
+
+<h2>সাইড বাই সাইড তুলনা:</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>ফিচার</th>
+            <th>সিসকো IOS</th>
+            <th>জুনোস OS</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>ইথারচ্যানেল/অ্যাগ্রিগেটেড ইন্টারফেস তৈরি</td>
+            <td><code>interface Port-channel3</code></td>
+            <td><code>set interfaces ae3</code></td>
+        </tr>
+        <tr>
+            <td>ইন্টারফেস ডেসক্রিপশন</td>
+            <td><code>description ACCESS-RW-LINK-LACP</code></td>
+            <td><code>set interfaces ae3 description "ACCESS-RW-LINK-LACP"</code></td>
+        </tr>
+        <tr>
+            <td>ট্রাঙ্ক মোড সেট</td>
+            <td><code>switchport mode trunk</code></td>
+            <td><code>set interfaces ae3 unit 0 family ethernet-switching interface-mode trunk</code></td>
+        </tr>
+        <tr>
+            <td>অনুমোদিত VLAN সেট</td>
+            <td><code>switchport trunk allowed vlan 1-4049</code></td>
+            <td><code>set interfaces ae3 unit 0 family ethernet-switching vlan members 1-4049</code></td>
+        </tr>
+        <tr>
+            <td>ফিজিক্যাল ইন্টারফেসে LACP কনফিগারেশন</td>
+            <td><code>channel-group 3 mode active</code></td>
+            <td><code>set interfaces ge-0/0/5 ether-options 802.3ad ae3</code></td>
+        </tr>
+        <tr>
+            <td>ফিজিক্যাল ইন্টারফেস ডেসক্রিপশন</td>
+            <td><code>description ACCESS-RW-LINK</code></td>
+            <td><code>set interfaces ge-0/0/5 description "ACCESS-RW-LINK"</code></td>
+        </tr>
+    </tbody>
+</table>
+<h1>Cisco vs Juniper: LACP and VLAN Configuration</h1>
+    <p>This document compares the LACP and VLAN configuration between Cisco and Juniper switches side by side.</p>
+
+    <h2>Comparison Table</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Function</th>
+                <th>Cisco Command</th>
+                <th>Juniper Command</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>LAG Interface Creation</td>
+                <td><code>interface port-channel3</code></td>
+                <td><code>set interfaces ae3</code></td>
+            </tr>
+            <tr>
+                <td>Description</td>
+                <td><code>description ACCESS-RW-LINK-LACP</code></td>
+                <td><code>set interfaces ae3 description "ACCESS-RW-LINK-LACP"</code></td>
+            </tr>
+            <tr>
+                <td>Trunk Mode</td>
+                <td><code>switchport mode trunk</code></td>
+                <td><code>set interfaces ae3 unit 0 family ethernet-switching port-mode trunk</code></td>
+            </tr>
+            <tr>
+                <td>Allowed VLANs</td>
+                <td><code>switchport trunk allowed vlan 1-4049</code></td>
+                <td><code>set interfaces ae3 unit 0 family ethernet-switching vlan members 1-4049</code></td>
+            </tr>
+            <tr>
+                <td>Physical Interface Addition</td>
+                <td><code>channel-group 3 mode active</code></td>
+                <td><code>set interfaces ge-0/0/5 ether-options 802.3ad ae3</code></td>
+            </tr>
+            <tr>
+                <td>LACP Mode</td>
+                <td><code>channel-group 3 mode active</code></td>
+                <td><code>set interfaces ae3 aggregated-ether-options lacp active</code></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Cisco Configuration Example</h2>
+    <pre>
+interface port-channel3
+ description ACCESS-RW-LINK-LACP
+ switchport mode trunk
+ switchport trunk allowed vlan 1-4049
+
+interface Ethernet1/5
+ description ACCESS-RW-LINK
+ switchport mode trunk
+ switchport trunk allowed vlan 1-4049
+ channel-group 3 mode active
+    </pre>
+
+    <h2>Juniper Configuration Example</h2>
+    <pre>
+set interfaces ae3 description "ACCESS-RW-LINK-LACP"
+set interfaces ae3 aggregated-ether-options lacp active
+set interfaces ae3 unit 0 family ethernet-switching port-mode trunk
+set interfaces ae3 unit 0 family ethernet-switching vlan members 1-4049
+
+set interfaces ge-0/0/5 description "ACCESS-RW-LINK"
+set interfaces ge-0/0/5 ether-options 802.3ad ae3
+    </pre>
+
+    <h1>নেটওয়ার্ক কনফিগারেশন তুলনা (Cisco vs Juniper)</h1>
+    
+    <div class="row">
+        <div class="column">
+            <h2 class="x">Cisco</h2>
+            <table>
+                <tr><th>কাজ</th><th>কমান্ড</th></tr>
+                <tr><td>নতুন ইউজার তৈরি</td><td>username ... group root-system<br>username ... secret .....</td></tr>
+                <tr><td>IP দ্বৈততা চেক</td><td>sh running-config | inc 172.16.23.<br>sh ipv4 interface brief | inc 172.16.23.21</td></tr>
+                <tr><td>BGP নেটওয়ার্ক চেক</td><td>show running-config router bgp 137449 vrf FNA neighbor 172.16.23.70</td></tr>
+                <tr><td>BGP সামারি চেক</td><td>show bgp vrf FNA ipv4 unicast summary</td></tr>
+                <tr><td>ক্লায়েন্ট থেকে প্রাপ্ত প্রিফিক্স</td><td>show bgp vrf FNA ipv4 unicast neighbors 172.16.22.194 routes</td></tr>
+                <tr><td>আমাদের পাঠানো প্রিফিক্স</td><td>show bgp vrf FNA ipv4 unicast neighbors 172.16.19.38 advertised-routes</td></tr>
+                <tr><td>স্ট্যাটিক রুট</td><td>router static<br>address-family ipv4 unicast<br>103.109.56.172/30 103.137.161.254 description Top-Network-Routed-IP-5</td></tr>
+                <tr><td>ইন্টারফেস কনফিগার</td><td>interface Bundle-Ether101.203<br>description TOP-NETWORK_INTERNET<br>ipv4 address 103.137.161.253 255.255.255.252</td></tr>
+                <tr><td>BGP পিয়ারিং</td><td>router bgp 137449<br>neighbor 103.137.161.254 remote-as 138953</td></tr>
+                <tr><td>ট্রাফিক শেপিং</td><td>policy-map 203-TOP-NETWORK_INTERNET<br>class class-default<br>police rate 1710 mbps</td></tr>
+                <tr><td>রাউটিং পলিসি</td><td>route-policy top_networks_in<br>if destination in TOP-NETWORKS-IN then pass else drop endif</td></tr>
+                <tr><td>অ্যাক্সেস লিস্ট</td><td>ipv4 access-group nat_site ingress</td></tr>
+            </table>
+        </div>
+        
+        <div class="column">
+            <h2 class="x">Juniper</h2>
+            <table>
+                <tr><th>কাজ</th><th>কমান্ড</th></tr>
+                <tr><td>নতুন ইউজার তৈরি</td><td>set system login user USERNAME class super-user authentication plain-text-password</td></tr>
+                <tr><td>IP দ্বৈততা চেক</td><td>show configuration | match "172.16.23."<br>show interfaces terse | match "172.16.23.21"</td></tr>
+                <tr><td>BGP নেটওয়ার্ক চেক</td><td>show configuration protocols bgp group FNA neighbor 172.16.23.70</td></tr>
+                <tr><td>BGP সামারি চেক</td><td>show bgp summary instance FNA</td></tr>
+                <tr><td>ক্লায়েন্ট থেকে প্রাপ্ত প্রিফিক্স</td><td>show route advertising-protocol bgp 172.16.22.194</td></tr>
+                <tr><td>আমাদের পাঠানো প্রিফিক্স</td><td>show route receive-protocol bgp 172.16.19.38</td></tr>
+                <tr><td>স্ট্যাটিক রুট</td><td>set routing-options static route 103.109.56.172/30 next-hop 103.137.161.254</td></tr>
+                <tr><td>ইন্টারফেস কনফিগার</td><td>set interfaces xe-0/0/1 unit 203 description "TOP-NETWORK_INTERNET"<br>set interfaces xe-0/0/1 unit 203 vlan-id 203</td></tr>
+                <tr><td>BGP পিয়ারিং</td><td>set protocols bgp group Top-Networks peer-as 138953<br>set protocols bgp group Top-Networks neighbor 103.137.161.254 description "Top_Networks"</td></tr>
+                <tr><td>ট্রাফিক শেপিং</td><td>set firewall policer 203-TOP-NETWORK_INTERNET if-exceeding bandwidth-limit 1710m</td></tr>
+                <tr><td>রাউটিং পলিসি</td><td>set policy-options policy-statement top_networks_in term 1 from route-filter TOP-NETWORKS-IN exact</td></tr>
+                <tr><td>অ্যাক্সেস লিস্ট</td><td>set firewall family inet filter NAT-SITE term 1 from source-address 0.0.0.0/0</td></tr>
+            </table>
+        </div>
+    </div>
+
+    <h1>DBMS CRUD Operations</h1>
+
+    <div class="row">
+        <!-- Course Table Section -->
+        <div class="column">
+            <div class="x">Course Table</div>
+            <div class="table-container">
+                <table>
+                    <tr><th>Query</th></tr>
+                    <tr><td><div class="query"><strong>1. Insert a new course into the table.</strong><br>INSERT INTO course (course_id, title, dept_name, credits) VALUES ('CS102', 'Introduction to Programming', 'Computer Science', 4);</div></td></tr>
+                    <tr><td><div class="query"><strong>2. Add another course with a specific title and credits.</strong><br>INSERT INTO course (course_id, title, dept_name, credits) VALUES ('MAT201', 'Calculus II', 'Mathematics', 3);</div></td></tr>
+                    <tr><td><div class="query"><strong>3. Insert multiple courses at once.</strong><br>INSERT INTO course (course_id, title, dept_name, credits) VALUES ('BIO101', 'Introduction to Biology', 'Biology', 4), ('PHY101', 'General Physics', 'Physics', 3);</div></td></tr>
+                    <tr><td><div class="query"><strong>4. Retrieve all course records.</strong><br>SELECT * FROM course;</div></td></tr>
+                    <tr><td><div class="query"><strong>5. Find courses with fewer than 3 credits.</strong><br>SELECT * FROM course WHERE credits < 3;</div></td></tr>
+                    <tr><td><div class="query"><strong>6. Get the course title and department name for a specific course ID (e.g., 'CS102').</strong><br>SELECT title, dept_name FROM course WHERE course_id = 'CS102';</div></td></tr>
+                    <tr><td><div class="query"><strong>7. List all courses ordered by department name.</strong><br>SELECT * FROM course ORDER BY dept_name;</div></td></tr>
+                    <tr><td><div class="query"><strong>8. Find all courses with 'Advanced' in their title.</strong><br>SELECT * FROM course WHERE title LIKE '%Advanced%';</div></td></tr>
+                    <tr><td><div class="query"><strong>9. Update the credits of a course with a specific course ID (e.g., 'CS102').</strong><br>UPDATE course SET credits = 5 WHERE course_id = 'CS102';</div></td></tr>
+                    <tr><td><div class="query"><strong>10. Change the title of a course (e.g., 'MAT201') to 'Calculus II - Advanced'.</strong><br>UPDATE course SET title = 'Calculus II - Advanced' WHERE course_id = 'MAT201';</div></td></tr>
+                    <tr><td><div class="query"><strong>11. Update the department name for a course (e.g., 'BIO101') to 'Life Sciences'.</strong><br>UPDATE course SET dept_name = 'Life Sciences' WHERE course_id = 'BIO101';</div></td></tr>
+                    <tr><td><div class="query"><strong>12. Delete a specific course by course ID (e.g., 'PHY101').</strong><br>DELETE FROM course WHERE course_id = 'PHY101';</div></td></tr>
+                    <tr><td><div class="query"><strong>13. Remove all courses with credits equal to 1.</strong><br>DELETE FROM course WHERE credits = 1;</div></td></tr>
+                    <tr><td><div class="query"><strong>16. Delete courses from a specific department (e.g., 'Mathematics').</strong><br>DELETE FROM course WHERE dept_name = 'Mathematics';</div></td></tr>
+                    <tr><td><div class="query"><strong>17. Update multiple courses' credits to 4 if their department is 'Mathematics'.</strong><br>UPDATE course SET credits = 4 WHERE dept_name = 'Mathematics';</div></td></tr>
+                </table>
+            </div>
+        </div>
+    
+        <!-- Student Table Section -->
+        <div class="column">
+            <div class="x">Student Table</div>
+            <div class="table-container">
+                <table>
+                    <tr><th>Query</th></tr>
+                    <tr><td><div class="query"><strong>1. Insert a new student into the table.</strong><br>INSERT INTO student (ID, name, dept_name, tot_cred) VALUES (1, 'Alice Smith', 'Computer Science', 30);</div></td></tr>
+                    <tr><td><div class="query"><strong>2. Add another student with a specific name and department.</strong><br>INSERT INTO student (ID, name, dept_name, tot_cred) VALUES (2, 'Bob Johnson', 'Mathematics', 45);</div></td></tr>
+                    <tr><td><div class="query"><strong>3. Insert multiple students at once.</strong><br>INSERT INTO student (ID, name, dept_name, tot_cred) VALUES (3, 'Charlie Brown', 'Physics', 20), (4, 'Diana Prince', 'Computer Science', 50);</div></td></tr>
+                    <tr><td><div class="query"><strong>4. Retrieve all student records.</strong><br>SELECT * FROM student;</div></td></tr>
+                    <tr><td><div class="query"><strong>5. Find students with total credits greater than 40.</strong><br>SELECT * FROM student WHERE tot_cred > 40;</div></td></tr>
+                    <tr><td><div class="query"><strong>6. Get the name and department of a specific student by ID (e.g., 1).</strong><br>SELECT name, dept_name FROM student WHERE ID = 1;</div></td></tr>
+                    <tr><td><div class="query"><strong>7. List all students ordered by total credits in descending order.</strong><br>SELECT * FROM student ORDER BY tot_cred DESC;</div></td></tr>
+                    <tr><td><div class="query"><strong>8. Find all students whose name starts with 'A'.</strong><br>SELECT * FROM student WHERE name LIKE 'A%';</div></td></tr>
+                    <tr><td><div class="query"><strong>9. Update the total credits for a student with a specific ID (e.g., 1).</strong><br>UPDATE student SET tot_cred = 35 WHERE ID = 1;</div></td></tr>
+                    <tr><td><div class="query"><strong>10. Change the name of a student (e.g., ID 2) to 'Robert Johnson'.</strong><br>UPDATE student SET name = 'Robert Johnson' WHERE ID = 2;</div></td></tr>
+                    <tr><td><div class="query"><strong>11. Update the department name for a student (e.g., ID 3) to 'Engineering'.</strong><br>UPDATE student SET dept_name = 'Engineering' WHERE ID = 3;</div></td></tr>
+                    <tr><td><div class="query"><strong>12. Delete a specific student by ID (e.g., 4).</strong><br>DELETE FROM student WHERE ID = 4;</div></td></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+
+<title>VXLAN EVPN Configuration on Nexus Switch</title>
+
+                            <h1>✅ Step by Step VXLAN EVPN Configuration Between Two Nexus Switches</h1>
+                            
+                            <h2>🎯 Prerequisite:</h2>
+                            <ul>
+                                <li>Nexus OS (NX-OS) এর latest version থাকতে হবে (যাতে VXLAN এবং EVPN সাপোর্ট করে)</li>
+                                <li>L3 connectivity থাকতে হবে দুই switch এর মধ্যে (underlay network)</li>
+                                <li>NVE (Network Virtualization Edge) feature enable করতে হবে</li>
+                                <li>BGP EVPN control plane configure করতে হবে</li>
+                            </ul>
+                            
+                            <h2>🔶 1. Underlay Network Configuration (IP reachability ensure করা)</h2>
+                            <p>প্রথমে Spine/Leaf architecture অনুযায়ী IP underlay configure করতে হবে (BGP, OSPF, etc.)। এখানে আমি দুই Nexus switch এর মধ্যে direct IP underlay দেখাচ্ছি।</p>
+                            
+                            <h3>Switch-1 (Leaf-1) - Underlay</h3>
+                            <pre>
+                            feature ospf
+                            feature bgp
+                            
+                            interface eth1/1
+                              no switchport
+                              ip address 10.0.12.1/30
+                            
+                            router ospf 1
+                              network 10.0.12.0 0.0.0.3 area 0
+                            </pre>
+                            
+                            <h3>Switch-2 (Leaf-2) - Underlay</h3>
+                            <pre>
+                            feature ospf
+                            feature bgp
+                            
+                            interface eth1/1
+                              no switchport
+                              ip address 10.0.12.2/30
+                            
+                            router ospf 1
+                              network 10.0.12.0 0.0.0.3 area 0
+                            </pre>
+                            
+                            <h2>🔶 2. Overlay Configuration (VXLAN NVE interface)</h2>
+                            <h3>Enable Required Features:</h3>
+                            <pre>
+                            feature nv overlay
+                            feature vn-segment-vlan-based
+                            feature interface-vlan
+                            feature bgp
+                            </pre>
+                            
+                            <h2>3. VNI, VLAN, NVE Configuration</h2>
+                            <h3>Example for Switch-1:</h3>
+                            <pre>
+                            vlan 10
+                              vn-segment 10010
+                            
+                            interface Vlan10
+                              no shutdown
+                              ip address 192.168.10.1/24
+                            
+                            interface nve1
+                              no shutdown
+                              source-interface loopback0
+                              member vni 10010
+                                ingress-replication protocol bgp
+                            </pre>
+                            
+                            <h3>Example for Switch-2:</h3>
+                            <pre>
+                            vlan 10
+                              vn-segment 10010
+                            
+                            interface Vlan10
+                              no shutdown
+                              ip address 192.168.10.2/24
+                            
+                            interface nve1
+                              no shutdown
+                              source-interface loopback0
+                              member vni 10010
+                                ingress-replication protocol bgp
+                            </pre>
+                            
+                            <h2>🔶 4. Loopback IP Configuration (VXLAN Source IP)</h2>
+                            <h3>Both switches:</h3>
+                            <pre>
+                            interface loopback0
+                              ip address 1.1.1.1/32  (Switch-1)
+                            
+                            interface loopback0
+                              ip address 2.2.2.2/32  (Switch-2)
+                            </pre>
+                            
+                            <h2>🔶 5. BGP EVPN Control Plane Configuration</h2>
+                            <h3>Switch-1:</h3>
+                            <pre>
+                            router bgp 65001
+                              router-id 1.1.1.1
+                              address-family l2vpn evpn
+                              neighbor 2.2.2.2 remote-as 65002
+                              neighbor 2.2.2.2 update-source loopback0
+                              address-family l2vpn evpn
+                            </pre>
+                            
+                            <h3>Switch-2:</h3>
+                            <pre>
+                            router bgp 65002
+                              router-id 2.2.2.2
+                              address-family l2vpn evpn
+                              neighbor 1.1.1.1 remote-as 65001
+                              neighbor 1.1.1.1 update-source loopback0
+                              address-family l2vpn evpn
+                            </pre>
+                            
+                            <h2>🔶 6. Host Facing Ports (Optional)</h2>
+                            <h3>Switch-1:</h3>
+                            <pre>
+                            interface eth1/2
+                              switchport
+                              switchport access vlan 10
+                              no shutdown
+                            </pre>
+                            
+                            <h3>Switch-2:</h3>
+                            <pre>
+                            interface eth1/2
+                              switchport
+                              switchport access vlan 10
+                              no shutdown
+                            </pre>
+                            
+                            <h2>✅ 7. Verification Commands</h2>
+                            <h3>VXLAN status:</h3>
+                            <pre>
+                            show nve peers
+                            show nve vni
+                            </pre>
+                            
+                            <h3>BGP EVPN status:</h3>
+                            <pre>
+                            show bgp l2vpn evpn summary
+                            </pre>
+                            
+                            <h3>VNI status:</h3>
+                            <pre>
+                            show vlan
+                            show vn-segment
+                            </pre>
+                            
+                            <h2>🎉 Conclusion:</h2>
+                            <p>এভাবে দুইটি Nexus switch এর মধ্যে VXLAN tunnel establish হবে। আপনি চাইলে multicast-based replication, external gateway, এবং advanced EVPN features (like type-5 route, VRF-lite) যোগ করতে পারেন।</p>
+                            
+
+                            <div class="container">
+                                <h1>Step by Step VXLAN EVPN কনফিগারেশন</h1>
+                        
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Step</th>
+                                            <th>Example</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>1. Underlay Network কনফিগারেশন</strong></td>
+                                            <td>
+                                                <pre>
+                        Switch-1 (Leaf-1) - Underlay:
+                        feature ospf
+                        feature bgp
+                        interface eth1/1
+                          no switchport
+                          ip address 10.0.12.1/30
+                        router ospf 1
+                          network 10.0.12.0 0.0.0.3 area 0
+                        
+                        Switch-2 (Leaf-2) - Underlay:
+                        feature ospf
+                        feature bgp
+                        interface eth1/1
+                          no switchport
+                          ip address 10.0.12.2/30
+                        router ospf 1
+                          network 10.0.12.0 0.0.0.3 area 0
+                                                </pre>
+                                            </td>
+                                        </tr>
+                        
+                                        <tr>
+                                            <td><strong>2. Overlay কনফিগারেশন (VXLAN NVE ইন্টারফেস)</strong></td>
+                                            <td>
+                                                <pre>
+                        প্রয়োজনীয় ফিচার এনেবল করুন:
+                        feature nv overlay
+                        feature vn-segment-vlan-based
+                        feature interface-vlan
+                        feature bgp
+                                                </pre>
+                                            </td>
+                                        </tr>
+                        
+                                        <tr>
+                                            <td><strong>3. VNI, VLAN, NVE কনফিগারেশন</strong></td>
+                                            <td>
+                                                <pre>
+                        Switch-1 এর উদাহরণ:
+                        vlan 10
+                          vn-segment 10010
+                        interface Vlan10
+                          no shutdown
+                          ip address 192.168.10.1/24
+                        interface nve1
+                          no shutdown
+                          source-interface loopback0
+                          member vni 10010
+                            ingress-replication protocol bgp
+                        
+                        Switch-2 এর উদাহরণ:
+                        vlan 10
+                          vn-segment 10010
+                        interface Vlan10
+                          no shutdown
+                          ip address 192.168.10.2/24
+                        interface nve1
+                          no shutdown
+                          source-interface loopback0
+                          member vni 10010
+                            ingress-replication protocol bgp
+                                                </pre>
+                                            </td>
+                                        </tr>
+                        
+                                        <tr>
+                                            <td><strong>4. Loopback IP কনফিগারেশন</strong></td>
+                                            <td>
+                                                <pre>
+                        Switch-1:
+                        interface loopback0
+                          ip address 1.1.1.1/32
+                        
+                        Switch-2:
+                        interface loopback0
+                          ip address 2.2.2.2/32
+                                                </pre>
+                                            </td>
+                                        </tr>
+                        
+                                        <tr>
+                                            <td><strong>5. BGP EVPN কনফিগারেশন</strong></td>
+                                            <td>
+                                                <pre>
+                        Switch-1:
+                        router bgp 65001
+                          router-id 1.1.1.1
+                          address-family l2vpn evpn
+                          neighbor 2.2.2.2 remote-as 65002
+                          neighbor 2.2.2.2 update-source loopback0
+                          address-family l2vpn evpn
+                        
+                        Switch-2:
+                        router bgp 65002
+                          router-id 2.2.2.2
+                          address-family l2vpn evpn
+                          neighbor 1.1.1.1 remote-as 65001
+                          neighbor 1.1.1.1 update-source loopback0
+                          address-family l2vpn evpn
+                                                </pre>
+                                            </td>
+                                        </tr>
+                        
+                                        <tr>
+                                            <td><strong>6. Host Facing Ports (Optional)</strong></td>
+                                            <td>
+                                                <pre>
+                        Switch-1:
+                        interface eth1/2
+                          switchport
+                          switchport access vlan 10
+                          no shutdown
+                        
+                        Switch-2:
+                        interface eth1/2
+                          switchport
+                          switchport access vlan 10
+                          no shutdown
+                                                </pre>
+                                            </td>
+                                        </tr>
+                        
+                                        <tr>
+                                            <td><strong>7. Verification Commands</strong></td>
+                                            <td>
+                                                <pre>
+                        VXLAN status:
+                        show nve peers
+                        show nve vni
+                        
+                        BGP EVPN status:
+                        show bgp l2vpn evpn summary
+                        
+                        VNI status:
+                        show vlan
+                        show vn-segment
+                                                </pre>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                        
+                            </div>
+                                
+
+                                <title>Access Point Configuration</title>
+                            </head>
+                            <body>
+                                <h1>Cisco AP Router Configaration</h1>
+                            
+                                <h2>General Settings</h2>
+                                <pre>
+                            hostname AP_NOC_2
+                            enable secret John@8080
+                            line console 0
+                            password John@8080
+                                </pre>
+                            
+                                <h2>SSID Configuration</h2>
+                                <pre>
+                            dot11 ssid INFINITY_NOC
+                             authentication open  
+                             authentication key-management wpa version 2
+                             guest-mode
+                             wpa-psk ascii InftNoc@2024#
+                             exit
+                                </pre>
+                            
+                                <h2>Radio Interface Dot11Radio0</h2>
+                                <pre>
+                            interface Dot11Radio0  
+                             encryption mode ciphers aes-ccm  
+                             ssid INFINITY_NOC  
+                             channel least-congested  
+                             no shutdown  
+                             exit
+                                </pre>
+                            
+                                <h2>Radio Interface Dot11Radio1</h2>
+                                <pre>
+                            interface Dot11Radio1  
+                             encryption mode ciphers aes-ccm  
+                             ssid INFINITY_NOC  
+                             channel least-congested  
+                             no shutdown  
+                             exit
+                                </pre>
+                            
+                                <h2>GigabitEthernet Interfaces</h2>
+                                <pre>
+                            interface GigabitEthernet0  
+                             no ip address  
+                             duplex auto  
+                             speed auto
+                            
+                            interface GigabitEthernet1  
+                             no ip address  
+                             duplex auto  
+                             speed auto
+                                </pre>
+                            
+                                <h2>HTTP and SSH Access</h2>
+                                <pre>
+                            ip http server  
+                            ip http secure-server  
+                            
+                            username admin secret John@8080  
+                            ip ssh version 2  
+                            line vty 0 15  
+                             transport input ssh  
+                             login local  
+                             exit
+                                </pre>
+                      
+
+                                    <h1>Cisco AP Router Configaration</h1>
+                                
+                                    <h2>১. ডিভাইসের নাম ও পাসওয়ার্ড সেট করা:</h2>
+                                    <pre>
+                                hostname AP_NOC_2
+                                enable secret John@8080
+                                line console 0
+                                password John@8080
+                                    </pre>
+                                    <p><strong>ব্যাখ্যা:</strong></p>
+                                    <ul>
+                                        <li><code>hostname AP_NOC_2</code>: ডিভাইসের নাম রাখা হলো <code>AP_NOC_2</code>।</li>
+                                        <li><code>enable secret John@8080</code>: ডিভাইসে Privileged Exec Mode এ যেতে চাইলে গোপন পাসওয়ার্ড <code>John@8080</code> ব্যবহার করতে হবে।</li>
+                                        <li><code>line console 0</code>: কনসোল পোর্টে লগইন করার জন্য।</li>
+                                        <li><code>password John@8080</code>: কনসোল লগইনের জন্য পাসওয়ার্ড সেট করা হলো <code>John@8080</code>।</li>
+                                    </ul>
+                                
+                                    <h2>২. SSID (WiFi Network Name) তৈরি ও নিরাপত্তা সেটআপ:</h2>
+                                    <pre>
+                                dot11 ssid INFINITY_NOC
+                                authentication open  
+                                authentication key-management wpa version 2
+                                guest-mode
+                                wpa-psk ascii InftNoc@2024#
+                                exit
+                                    </pre>
+                                    <p><strong>ব্যাখ্যা:</strong></p>
+                                    <ul>
+                                        <li><code>dot11 ssid INFINITY_NOC</code>: <code>INFINITY_NOC</code> নামের ওয়াইফাই নেটওয়ার্ক তৈরি।</li>
+                                        <li><code>authentication open</code>: ওপেন অথেন্টিকেশন (কিন্তু পরে WPA2 দিয়ে নিরাপদ করা হয়েছে)।</li>
+                                        <li><code>authentication key-management wpa version 2</code>: WPA2 নিরাপত্তা ব্যবস্থা সক্রিয়।</li>
+                                        <li><code>guest-mode</code>: ওয়াইফাই নেটওয়ার্ককে ব্রডকাস্ট করা হবে, অর্থাৎ সবাই দেখতে পাবে।</li>
+                                        <li><code>wpa-psk ascii InftNoc@2024#</code>: ওয়াইফাই পাসওয়ার্ড <code>InftNoc@2024#</code> সেট করা।</li>
+                                    </ul>
+                                
+                                    <h2>৩. রেডিও ইন্টারফেস কনফিগারেশন (WiFi Frequency Bands):</h2>
+                                    <h3>📡 (a) 2.4 GHz রেডিও ইন্টারফেস:</h3>
+                                    <pre>
+                                interface Dot11Radio0  
+                                encryption mode ciphers aes-ccm  
+                                ssid INFINITY_NOC  
+                                channel least-congested  
+                                no shutdown  
+                                exit
+                                    </pre>
+                                    <p><strong>ব্যাখ্যা:</strong></p>
+                                    <ul>
+                                        <li><code>interface Dot11Radio0</code>: ২.৪ GHz এর WiFi ইন্টারফেস।</li>
+                                        <li><code>encryption mode ciphers aes-ccm</code>: এনক্রিপশন হিসেবে AES-CCM ব্যবহার হবে (উন্নত নিরাপত্তা)।</li>
+                                        <li><code>ssid INFINITY_NOC</code>: আগেই তৈরি করা WiFi নেটওয়ার্ক অ্যাসাইন করা হলো।</li>
+                                        <li><code>channel least-congested</code>: এমন চ্যানেল ব্যবহার করবে যেখানে কম ভিড়।</li>
+                                        <li><code>no shutdown</code>: ইন্টারফেস চালু করা হলো।</li>
+                                    </ul>
+                                
+                                    <h3>📡 (b) 5 GHz রেডিও ইন্টারফেস:</h3>
+                                    <pre>
+                                interface Dot11Radio1  
+                                encryption mode ciphers aes-ccm  
+                                ssid INFINITY_NOC  
+                                channel least-congested  
+                                no shutdown  
+                                exit
+                                    </pre>
+                                    <p><strong>ব্যাখ্যা:</strong></p>
+                                    <ul>
+                                        <li><code>interface Dot11Radio1</code>: ৫ GHz এর WiFi ইন্টারফেস।</li>
+                                        <li>বাকি সবকিছু একই: এনক্রিপশন, SSID, চ্যানেল, চালু করা হলো।</li>
+                                    </ul>
+                                
+                                    <h2>৪. ইথারনেট পোর্ট কনফিগারেশন:</h2>
+                                    <pre>
+                                interface GigabitEthernet0  
+                                no ip address  
+                                duplex auto  
+                                speed auto
+                                
+                                interface GigabitEthernet1  
+                                no ip address  
+                                duplex auto  
+                                speed auto
+                                    </pre>
+                                    <p><strong>ব্যাখ্যা:</strong></p>
+                                    <ul>
+                                        <li>দুটি ইথারনেট পোর্ট (LAN পোর্ট) আছে।</li>
+                                        <li><code>no ip address</code>: আইপি অ্যাড্রেস দেওয়া হয়নি (পরবর্তীতে দেওয়া যেতে পারে)।</li>
+                                        <li><code>duplex auto</code> এবং <code>speed auto</code>: স্পিড ও ডুপ্লেক্স স্বয়ংক্রিয়ভাবে ঠিক হবে।</li>
+                                    </ul>
+                                
+                                    <h2>৫. ওয়েব ও SSH সার্ভার চালু করা:</h2>
+                                    <pre>
+                                ip http server  
+                                ip http secure-server  
+                                    </pre>
+                                    <p><strong>ব্যাখ্যা:</strong></p>
+                                    <ul>
+                                        <li>ওয়েব ইন্টারফেসে (GUI) কনফিগারেশনের জন্য HTTP ও HTTPS সার্ভার চালু করা হলো।</li>
+                                    </ul>
+                                
+                                    <h2>৬. ইউজার একাউন্ট এবং SSH সেটআপ:</h2>
+                                    <pre>
+                                username admin secret John@8080  
+                                ip ssh version 2  
+                                line vty 0 15  
+                                transport input ssh  
+                                login local  
+                                exit
+                                    </pre>
+                                    <p><strong>ব্যাখ্যা:</strong></p>
+                                    <ul>
+                                        <li><code>username admin secret John@8080</code>: <code>admin</code> নামে ইউজার একাউন্ট, পাসওয়ার্ড <code>John@8080</code>।</li>
+                                        <li><code>ip ssh version 2</code>: SSH version 2 চালু।</li>
+                                        <li><code>line vty 0 15</code>: রিমোট এক্সেস (SSH এর জন্য) লাইন ০ থেকে ১৫ পর্যন্ত।</li>
+                                        <li><code>transport input ssh</code>: SSH ছাড়া অন্য কিছুতে (যেমন Telnet) প্রবেশ করা যাবে না।</li>
+                                        <li><code>login local</code>: লোকাল ইউজার (<code>admin</code>) দিয়ে লগইন হবে।</li>
+                                    </ul>
+                                
+                                    <h2>🔑 সারাংশ (Summary):</h2>
+                                    <ol>
+                                        <li>ডিভাইসের নাম ও সিক্রেট পাসওয়ার্ড সেট।</li>
+                                        <li><code>INFINITY_NOC</code> নামে ওয়াইফাই তৈরি, WPA2 ও AES নিরাপত্তা।</li>
+                                        <li>২.৪ GHz ও ৫ GHz দুই ব্যান্ডে চালু।</li>
+                                        <li>ইথারনেট পোর্ট অটো মোডে।</li>
+                                        <li>ওয়েব ও HTTPS ম্যানেজমেন্ট অ্যাক্সেস।</li>
+                                        <li>SSH অ্যাক্সেস সহ ইউজারনেম-পাসওয়ার্ড।</li>
+                                    </ol>
+
+                                        <h1>Junipar Router Configuration</h1>
+                                        <pre>
+                                    set logical-systems GGC-RT interfaces ae15 unit 2460 vlan-id 2460
+                                    set logical-systems GGC-RT interfaces ae15 unit 2460 description *Gazi_shihab_broadband_GGC*
+                                    set logical-systems GGC-RT interfaces ae15 unit 2460 family inet address 172.16.42.45/30
+                                    
+                                    set logical-systems GGC-RT policy-options policy-statement Gazi_shihab_broadband_GGC-IN term 1 from route-filter 103.137.161.60/31 exact
+                                    set logical-systems GGC-RT policy-options policy-statement Gazi_shihab_broadband_GGC-IN term 1 then local-preference 1000
+                                    set logical-systems GGC-RT policy-options policy-statement Gazi_shihab_broadband_GGC-IN term 1 then accept
+                                    set logical-systems GGC-RT policy-options policy-statement Gazi_shihab_broadband_GGC-IN term 5 then reject
+                                    
+                                    set logical-systems GGC-RT protocols bgp group clients-ggc neighbor 172.16.42.46 peer-as 64655
+                                    set logical-systems GGC-RT protocols bgp group clients-ggc neighbor 172.16.42.46 description *Gazi_shihab_broadband_GGC*
+                                    set logical-systems GGC-RT protocols bgp group clients-ggc neighbor 172.16.42.46 local-address 172.16.42.45
+                                    
+                                    set logical-systems GGC-RT protocols bgp group clients-ggc neighbor 172.16.42.46 import Gazi_shihab_broadband_GGC-IN
+                                    set logical-systems GGC-RT protocols bgp group clients-ggc neighbor 172.16.42.46 export ggc-clients-out
+                                    
+                                    set logical-systems GGC-RT firewall family inet filter copp term bgp from source-address 172.16.42.46/32
+                                    
+                                    set logical-systems GGC-RT interfaces ae15 unit 2460 family inet policer input policer-2460
+                                    set logical-systems GGC-RT interfaces ae15 unit 2460 family inet policer output policer-2460
+                                    
+                                    set logical-systems GGC-RT firewall policer policer-2460 if-exceeding bandwidth-limit 880m
+                                    set logical-systems GGC-RT firewall policer policer-2460 if-exceeding burst-size-limit 256k
+                                    set logical-systems GGC-RT firewall policer policer-2460 then discard
+                                        </pre>
+
+                                        
+                                            <h2>✅ ১. Interface ও VLAN ঠিক আছে কিনা চেক করুন</h2>
+                                            <div class="section">
+                                                <p><strong>কমান্ড:</strong></p>
+                                                <code>show interfaces terse | match ae15.2460</code>
+                                                <p>run show interfaces terse | match 2460</p>
+                                                <p><strong>আপনার expected output:</strong></p>
+                                                <code>ae15.2460   up    up    inet    172.16.42.45/30</code>
+                                            </div>
+                                        
+                                            <h2>✅ ২. BGP Peering ঠিকভাবে Established হয়েছে কিনা চেক করুন</h2>
+                                            <div class="section">
+                                                <p><strong>কমান্ড:</strong></p>
+                                                <code>show bgp summary | match 172.16.42.46</code>
+                                                <p>show bgp summary logical-system GGC-RT | match 172.16.42.46</p>
+                                                <p><strong>আপনার expected output:</strong></p>
+                                                <code>172.16.42.46   64655   1   0   0   0    00:30:12   Establ</code>
+                                            </div>
+                                        
+                                            <h2>✅ ৩. Import Policy (Route Receive হচ্ছে কিনা চেক করুন)</h2>
+                                            <div class="section">
+                                                <p><strong>কমান্ড:</strong></p>
+                                                <code>show route receive-protocol bgp 172.16.42.46</code>
+                                                <p>show route logical-system GGC-RT receive-protocol bgp 172.16.42.46</p>
+                                                <p><strong>আপনার expected output:</strong></p>
+                                                <code>103.137.161.60/31 *[BGP/170] 00:15:30, localpref 1000, from 172.16.42.46</code>
+                                            </div>
+                                        
+                                            <h2>✅ ৪. Export Policy (Route Advertise হচ্ছে কিনা চেক করুন)</h2>
+                                            <div class="section">
+                                                <p><strong>কমান্ড:</strong></p>
+                                                <code>show route advertising-protocol bgp 172.16.42.46</code>
+                                                <p>show route logical-system GGC-RT advertising-protocol bgp 172.16.42.46</p>
+                                            </div>
+                                        
+                                            <h2>✅ ৫. Firewall Filter (BGP ট্রাফিক অনুমোদিত হচ্ছে কিনা চেক করুন)</h2>
+                                            <div class="section">
+                                                <p><strong>কমান্ড:</strong></p>
+                                                <code>show firewall filter copp</code>
+                                            </div>
+                                        
+                                            <h2>✅ ৬. Traffic Policing (Bandwidth ঠিকমতো কাজ করছে কিনা চেক করুন)</h2>
+                                            <div class="section">
+                                                <p><strong>কমান্ড:</strong></p>
+                                                <code>show interfaces queue ae15.2460</code>
+                                            </div>
+                                        
+                                            <h2>📌 সারসংক্ষেপ (Final Confirmation Checklist)</h2>
+                                            <div class="section">
+                                                <p>✅ **যদি এই টেস্টগুলো সব ঠিকমতো কাজ করে, তাহলে আপনার কনফিগারেশন পুরোপুরি ঠিক আছে!** 🎯</p>
+                                                <p>⚠ **যদি কোনো সমস্যা পান, তাহলে আমাকে বলুন—আমি debug করতে সাহায্য করবো!** 🚀</p>
+                                            </div>
+                                            <div class="clear-div-1"></div>
+                                            
+<div >
+    <table class="table-10">
+
+        <caption>Step-by-Step Juniper Router Configuration (Junos OS)</caption>
+        <tr>
+            <th>Name of Configaration</th>
+            <th>Configaration</th>
+        </tr>
+        <tr>
+            <th rowspan="2" >User Create </th>
+            <td>set system login user mehedi class super-user</td>
+            
+        </tr>
+        <tr>
+            <td>set system login user mehedi authentication plain-text-password</td>
+
+        </tr>
+        <tr>
+            <th rowspan="3">IP Assign</th>
+            <td>set logical-systems ABC-RT interfaces ae1 unit 2001 vlan-id 2001</td>
+        </tr>
+        <tr>
+            <td>set logical-systems ABC-RT interfaces ae1 unit 2001 description test</td>
+        </tr>
+        <tr>
+            <td>set logical-systems ABC-RT interfaces ae1 unit 2001 family Outet address 172.30.169.193/30</td>
+        </tr>
+        <tr>
+            <th rowspan="3">Policy / policer create</th>
+            <td>set logical-systems ABC-RT firewall policer Mehedi_Policar-2001 if-exceeding bandwidth-limit 10m</td>
+        </tr>
+        <tr>
+            <td>set logical-systems ABC-RT firewall policer Mehedi_Policar-2001 if-exceeding burst-size-limit 1m</td>
+        </tr>
+        <tr>
+            <td>set logical-systems ABC-RT firewall policer Mehedi_Policar-2001 then discard</td>
+        </tr>
+        <tr>
+            <th rowspan="2">policer Assgin</th>
+            <td>set logical-systems ABC-RT Outterfaces ae1 unit 2001 family Outet policer Output Mehedi_Policar-2001</td>
+        </tr>
+        <tr>
+            <td>set logical-systems ABC-RT Outterfaces ae1 unit 2001 family Outet policer output Mehedi_Policar-2001</td>
+        </tr>
+        <tr>
+            <th rowspan="3">BGP route In-filter / policy-options policy-statement Create</th>
+            <td>set logical-systems ABC-RT policy-options policy-statement Mehedi_test_IN term 1 from route-filter 172.30.169.192/32 exact</td>        
+        </tr>
+        <tr>
+            <td>set logical-systems ABC-RT policy-options policy-statement Mehedi_test_IN term 1 then accept</td>
+        </tr>
+        <tr>
+            <td>set logical-systems ABC-RT policy-options policy-statement Mehedi_test_IN term 2 then reject</td>
+        </tr>
+
+        <tr>
+            <th rowspan="3">BGP route Out-filter / policy-options policy-statement Create</th>
+            <td>set logical-systems ABC-RT policy-options policy-statement Mehedi_test_Out term 1 from route-filter 0.0.0.0/0 exact</td>        
+        </tr>
+        <tr>
+            <td>set logical-systems ABC-RT policy-options policy-statement Mehedi_test_Out term 1 then accept</td>
+        </tr>
+        <tr>
+            <td>set logical-systems ABC-RT policy-options policy-statement Mehedi_test_Out term 2 then reject</td>
+        </tr>
+        <tr>
+            <th>Local AS set</th>
+            <td>set logical-systems ABC-RT routing-options autonomous-system 150</td>
+        </tr>
+        <tr>
+            <th rowspan="7">BGP Configaration</th>
+            <td> set logical-systems ABC-RT protocols bgp group Mehedi-BGP-Group-IN type external</td>
+
+        </tr>
+        <tr>
+            <td>set logical-systems ABC-RT protocols bgp group Mehedi-BGP-Group-IN peer-as 200</td>
+        </tr>
+        <tr>
+            <td>set logical-systems ABC-RT protocols bgp group Mehedi-BGP-Group-IN neighbor 172.30.169.194 description "Mehedi-BGP-Test-Description"</td>
+        </tr>
+        <tr>
+            <td>set logical-systems ABC-RT protocols bgp group Mehedi-BGP-Group-IN neighbor 172.30.169.194 local-address 172.30.169.193</td>
+        </tr>
+        <tr>
+            <td>set logical-systems ABC-RT protocols bgp group Mehedi-BGP-Group-IN neighbor 172.30.169.194 import Mehedi_test_IN</td>
+        </tr>
+        <tr>
+            <td>set logical-systems ABC-RT protocols bgp group Mehedi-BGP-Group-IN neighbor 172.30.169.194 export Mehedi_test_Out</td>
+        </tr>
+        <tr>
+            <td>set logical-systems ABC-RT protocols bgp group Mehedi-BGP-Group-IN neighbor 172.30.169.194 local-as 100 alias</td>
+        </tr>
+
+
+    </table>
+</div>
+
+                                                                                                       
+
+
+
+</body>
+</html>
