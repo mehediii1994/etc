@@ -65,6 +65,17 @@ color: wheat
     
 
 }
+
+.div_4 {
+    float: left;
+    background-color:black;
+    width:auto;
+    padding: 5px;
+    tr:hover {background-color:#FF0B55}
+    border: 5px solid wheat
+    
+
+}
 .div2 {
     float: initial;
     background-color: brown;
@@ -82,13 +93,12 @@ color: wheat
 .z{
     font-size: 20px;
 }
-.div_4{
+.Table_1{
     float: left;
     background-color:black;
     width:auto;
     padding: 5px;
     tr:hover {background-color:#FF0B55}
-    
 }
 
 
@@ -418,6 +428,32 @@ color: wheat
             <td>17</td>
         </tr>
     </table>
+</div>
+<br> <br>
+<div class="Table_1">
+    <table>
+        <caption>LACP and PAgP mode</caption>
+    <tr>
+      <th></th>
+      <th>Switch A-Mode</th>
+      <th>Switch B-Mode</th>
+    </tr>
+    <tr>
+      <td>PAgP</td>
+      <td>Desirable</td>
+      <td>Auto</td>
+    </tr>
+    <tr>
+      <td>LACP</td>
+      <td>Active</td>
+      <td>Passive</td>
+    </tr>
+    <tr>
+        <td>👉 মানে দাঁড়ালো:
+Switch থেকে Router এ EtherChannel করলে src-ip বা src-dst-ip hashing ব্যবহার করাই standard practice।</td>
+    </tr>
+  </table>
+
 </div>
  
 
@@ -980,6 +1016,27 @@ interface GigaEthernet0/15
             <ul class="y">/ip firewall nat</ul>
                <ul class="y">add chain=dstnat protocol=tcp port=3389 in-interface=ether1 \</ul>
                <ul class="y">action=dst-nat to-address=192.168.88.254</ul>
+         </ul>
+         <ul class="y">
+            <pre>
+                /ip firewall nat
+add action=dst-nat chain=dstnat comment=OFFICE-PC dst-address=10.15.15.130 dst-port=4496 protocol=tcp to-addresses=192.168.200.254 to-ports=3389
+
+dst-address=10.15.15.130 ==>> ei IP ta holo amr ISP theke deya P2P IP 
+            </pre>
+            <pre>
+                📌 Basa barir Wifi RW jokhon  Port Forwarding korbo tokhon
+
+Internal Port = Inside (ভেতরের আসল সার্ভিসের পোর্ট)
+👉 আপনার PC/Server যে পোর্টে লিসেন করছে (যেমন: RDP = 3389)।
+
+External Port = Outside (বাইরে থেকে কানেক্ট করার পোর্ট)
+👉 ইন্টারনেট থেকে ইউজাররা যেই পোর্ট ব্যবহার করে কানেক্ট করবে (যেমন: 4497 → 3389)।
+
+মনে রাখার ট্রিক:
+➡️ Internal = Inside port (ভেতরের দরজা)
+➡️ External = Outside port (বাইরের গেট)
+            </pre>
          </ul>
          <p class="x">Setting up Wireless</p>
          <ul class="y">
