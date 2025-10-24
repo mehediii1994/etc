@@ -473,6 +473,7 @@ interface GigaEthernet0/15
     spanning-tree guard root
     spanning-tree bpdufilter enable
     </pre>
+
 <p class="x">MGMT Vlan IP assign</p>
 <ul class="y">
    <li>HINGULA-CORE-Nexus-SW#configure terminal</li>
@@ -574,6 +575,13 @@ interface GigaEthernet0/15
 
     </ul>
       <h1>BDCom OLt</h1>   
+
+      <p class="x">Root Bridge setup when RSTP</p>
+      <pre>
+        spanning-tree mode rstp
+        spanning-tree rstp priority 0
+
+      </pre>
       <p class="x">BDCOM OLT or SW OS installation Process</p>
       <ul class="y">
          <li>monitor#ip address 192.168.8.2 255.255.255.0</li>
