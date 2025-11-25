@@ -571,7 +571,14 @@ interface GigaEthernet0/15
         <li><a href="https://youtu.be/ST-LTojvfCA"target="_blank">Video tuitorial</a></li><br>
         <li>Username : admin</li>
         <li>New Password : admin@123</li>
-        
+    <p class="x">VSOL Loop Protection</p>
+    <pre>
+        configure terminal
+  loopback effect onu
+  loopback detect enable pon
+  loopback mode manual-recovery
+  wr
+    </pre>
 
     </ul>
       <h1>BDCom OLt</h1>   
