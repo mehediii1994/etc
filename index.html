@@ -3310,6 +3310,72 @@ set interfaces ge-0/0/5 ether-options 802.3ad ae3
 
 
     </table>
+
+    <p class="x">VXLAN</p>
+    <pre>
+        Maijdee---CE Serise--------
+
+undo vlan 1607
+
+interface Eth-Trunk2
+undo port trunk allow-pass vlan 1607
+q
+
+#
+bridge-domain 301607
+description Dinamonirhat-faruk
+ vxlan vni 301607
+ #
+ evpn
+  route-distinguisher 1:301607
+  vpn-target 301607:1 export-extcommunity
+  vpn-target 301607:1 import-extcommunity
+#
+interface Eth-Trunk2.301607 mode l2
+ description Dinamonirhat-faruk
+ encapsulation dot1q vid 1607
+ bridge-domain 301607
+ mac-address flapping trigger error-down
+#
+interface Nve1
+vni 301607 head-end peer-list 172.16.103.25
+
+
+-----------------Sonapur---------S serise 
+
+undo vlan 1607
+interface XGigabitEthernet 0/0/7
+undo port trunk allow-pass vlan 1607
+q
+
+
+bridge-domain 301607
+ description 
+ vxlan vni 301607
+ evpn binding vpn-instance evpn301607
+ q
+evpn vpn-instance evpn301607 bd-mode
+ route-distinguisher 301607:1
+ vpn-target 100:301607 export-extcommunity
+ vpn-target 100:301607 import-extcommunity
+q
+interface XGigabitEthernet 0/0/7.1607 mode l2
+ description Dinamonirhat-faruk
+ mac-address flapping action error-down
+ encapsulation dot1q vid 1607
+ bridge-domain 301607
+q
+interface Nve1
+vni 301607 head-end peer-list 172.16.103.1
+    </pre>
+
+    <pre>
+        display vxlan vni 301205
+display bridge-domain 301205
+display mac-address bridge-domain 301205
+display vxlan tunnel 
+[DAGONBHUIYA_HW]vcmp role transparent
+    </pre>
 </div>
 
                                                                                                        
