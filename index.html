@@ -3376,6 +3376,167 @@ display mac-address bridge-domain 301205
 display vxlan tunnel 
 [DAGONBHUIYA_HW]vcmp role transparent
     </pre>
+
+
+
+    <p class="x">Junipar Logical configaration</p>
+    <pre class="z">
+        Dear Concern,
+
+Mentioned link is up and running. Logical information has given below:
+
+INT Vlan-1480  
+Client IP: 172.23.9.34/30
+GW-172.23.9.33
+ASN : 138640
+
+GGC-Vlan-1481  
+Client IP: 172.16.43.154/30
+GW-172.16.43.153
+ASN : 149765
+
+FNA Vlan-1482
+Client IP: 172.16.38.46/30
+GW-172.16.38.45
+ASN : 138640
+
+BDIX Vlan-1483
+Client IP:172.16.35.90/30
+GW-172.16.35.89
+ASN : 138640
+
+Nating IP:  103.42.203.92/30 
+Client AS: 64655
+
+
+
+
+
+
+
+set interfaces ae11 unit 1480 description BOSURHAT-BROADBAND-INT
+set interfaces ae11 unit 1480 vlan-id 1480
+set interfaces ae11 unit 1480 family inet policer input policer-vlan-1480
+set interfaces ae11 unit 1480 family inet policer output policer-vlan-1480
+set interfaces ae11 unit 1480 family inet address 172.23.9.33/30
+set firewall policer policer-vlan-1480 if-exceeding bandwidth-limit 600m
+set firewall policer policer-vlan-1480 if-exceeding burst-size-limit 1m
+set firewall policer policer-vlan-1480 then discard
+
+set protocols bgp group BOSURHAT-BROADBAND-INT neighbor 172.23.9.34 description BOSURHAT-BROADBAND-INT
+set protocols bgp group BOSURHAT-BROADBAND-INT neighbor 172.23.9.34 local-address 172.23.9.33
+set protocols bgp group BOSURHAT-BROADBAND-INT neighbor 172.23.9.34 import BOSURHAT-BROADBAND-INT-IN
+set protocols bgp group BOSURHAT-BROADBAND-INT neighbor 172.23.9.34 export CLIENT-DEFAULT-OUT
+set protocols bgp group BOSURHAT-BROADBAND-INT neighbor 172.23.9.34 peer-as 64655
+set firewall family inet filter protect-router-control-plane term bgp from source-address 172.23.9.34/32
+
+
+set policy-options policy-statement BOSURHAT-BROADBAND-INT-IN term 1 from route-filter 103.42.203.92/30 upto /32
+set policy-options policy-statement BOSURHAT-BROADBAND-INT-IN term 1 then local-preference 200
+set policy-options policy-statement BOSURHAT-BROADBAND-INT-IN term 1 then accept
+set policy-options policy-statement BOSURHAT-BROADBAND-INT-IN term 5 then reject
+
+
+GGC-14811-172.16.43.152/30-ASN-149765
+
+set logical-systems GGC-RT interfaces ae11 unit 1481 description BOSURHAT-BROADBAND-GGC
+set logical-systems GGC-RT interfaces ae11 unit 1481 vlan-id 1481
+set logical-systems GGC-RT interfaces ae11 unit 1481 family inet policer input policer-1481
+set logical-systems GGC-RT interfaces ae11 unit 1481 family inet policer output policer-1481
+set logical-systems GGC-RT interfaces ae11 unit 1481 family inet address 172.16.43.153/30
+set logical-systems GGC-RT firewall policer policer-1481 if-exceeding bandwidth-limit 2000m
+set logical-systems GGC-RT firewall policer policer-1481 if-exceeding burst-size-limit 1m
+set logical-systems GGC-RT firewall policer policer-1481 then discard
+
+set logical-systems GGC-RT protocols bgp group BOSURHAT-BROADBAND-GGC neighbor 172.16.43.154 description BOSURHAT-BROADBAND-GGC
+set logical-systems GGC-RT protocols bgp group BOSURHAT-BROADBAND-GGC neighbor 172.16.43.154 local-address 172.16.43.153
+set logical-systems GGC-RT protocols bgp group BOSURHAT-BROADBAND-GGC neighbor 172.16.43.154 import BOSURHAT-BROADBAND-GGC-IN
+set logical-systems GGC-RT protocols bgp group BOSURHAT-BROADBAND-GGC neighbor 172.16.43.154 export CLIENT-GGC-OUT
+set logical-systems GGC-RT protocols bgp group BOSURHAT-BROADBAND-GGC neighbor 172.16.43.154 peer-as 64655
+set logical-systems GGC-RT firewall family inet filter protect-router-control-plane term bgp from source-address 172.16.43.154/32
+
+
+set logical-systems GGC-RT policy-options policy-statement BOSURHAT-BROADBAND-GGC-IN term 1 from route-filter 103.42.203.92/30 upto /32
+set logical-systems GGC-RT policy-options policy-statement BOSURHAT-BROADBAND-GGC-IN term 1 then local-preference 1000
+set logical-systems GGC-RT policy-options policy-statement BOSURHAT-BROADBAND-GGC-IN term 1 then accept
+set logical-systems GGC-RT policy-options policy-statement BOSURHAT-BROADBAND-GGC-IN term 5 then reject
+
+
+FNA-1482-172.16.38.44/30-ASN-138640
+
+
+set logical-systems FNA-RT interfaces ae11 unit 1482 description BOSURHAT-BROADBAND-FNA
+set logical-systems FNA-RT interfaces ae11 unit 1482 vlan-id 1482
+set logical-systems FNA-RT interfaces ae11 unit 1482 family inet policer input policer-1482
+set logical-systems FNA-RT interfaces ae11 unit 1482 family inet policer output policer-1482
+set logical-systems FNA-RT interfaces ae11 unit 1482 family inet address 172.16.38.45/30
+set logical-systems FNA-RT firewall policer policer-1482 if-exceeding bandwidth-limit 1500m
+set logical-systems FNA-RT firewall policer policer-1482 if-exceeding burst-size-limit 1m
+set logical-systems FNA-RT firewall policer policer-1482 then discard
+
+set logical-systems FNA-RT protocols bgp group BOSURHAT-BROADBAND-FNA neighbor 172.16.38.46 description BOSURHAT-BROADBAND-FNA
+set logical-systems FNA-RT protocols bgp group BOSURHAT-BROADBAND-FNA neighbor 172.16.38.46 local-address 172.16.38.45
+set logical-systems FNA-RT protocols bgp group BOSURHAT-BROADBAND-FNA neighbor 172.16.38.46 import BOSURHAT-BROADBAND-FNA-IN
+set logical-systems FNA-RT protocols bgp group BOSURHAT-BROADBAND-FNA neighbor 172.16.38.46 export CLIENT-FNA-OUT
+set logical-systems FNA-RT protocols bgp group BOSURHAT-BROADBAND-FNA neighbor 172.16.38.46 peer-as 64655
+set logical-systems FNA-RT firewall family inet filter protect-router-control-plane term bgp from source-address 172.16.38.46/32
+
+set logical-systems FNA-RT policy-options policy-statement BOSURHAT-BROADBAND-FNA-IN term 1 from route-filter 103.42.203.92/30 upto /32
+set logical-systems FNA-RT policy-options policy-statement BOSURHAT-BROADBAND-FNA-IN term 1 then local-preference 900
+set logical-systems FNA-RT policy-options policy-statement BOSURHAT-BROADBAND-FNA-IN term 1 then accept
+set logical-systems FNA-RT policy-options policy-statement BOSURHAT-BROADBAND-FNA-IN term 5 then reject
+
+
+CDN-1643-172.16.46.196/30-ASN-149765
+
+set logical-systems MCDN-RT interfaces ae11 unit 1643 description BOSURHAT-BROADBAND-CDN
+set logical-systems MCDN-RT interfaces ae11 unit 1643 vlan-id 1643
+set logical-systems MCDN-RT interfaces ae11 unit 1643 family inet policer input policer-1643
+set logical-systems MCDN-RT interfaces ae11 unit 1643 family inet policer output policer-1643
+set logical-systems MCDN-RT interfaces ae11 unit 1643 family inet address 172.16.46.197/30
+set logical-systems MCDN-RT firewall policer policer-1643 if-exceeding bandwidth-limit 150m
+set logical-systems MCDN-RT firewall policer policer-1643 if-exceeding burst-size-limit 1m
+set logical-systems MCDN-RT firewall policer policer-1643 then discard
+
+set logical-systems MCDN-RT protocols bgp group BOSURHAT-BROADBAND-CDN neighbor 172.16.46.198 description BOSURHAT-BROADBAND-CDN
+set logical-systems MCDN-RT protocols bgp group BOSURHAT-BROADBAND-CDN neighbor 172.16.46.198 local-address 172.16.46.197
+set logical-systems MCDN-RT protocols bgp group BOSURHAT-BROADBAND-CDN neighbor 172.16.46.198 import BOSURHAT-BROADBAND-CDN-IN
+set logical-systems MCDN-RT protocols bgp group BOSURHAT-BROADBAND-CDN neighbor 172.16.46.198 export CLIENT-MCDN-OUT
+set logical-systems MCDN-RT protocols bgp group BOSURHAT-BROADBAND-CDN neighbor 172.16.46.198 peer-as 64655
+set logical-systems MCDN-RT firewall family inet filter protect-router-control-plane term bgp from source-address 172.16.46.198/32
+
+
+set logical-systems MCDN-RT policy-options policy-statement BOSURHAT-BROADBAND-CDN-IN term 1 from route-filter 103.42.203.92/30 upto /32
+set logical-systems MCDN-RT policy-options policy-statement BOSURHAT-BROADBAND-CDN-IN term 1 then local-preference 800
+set logical-systems MCDN-RT policy-options policy-statement BOSURHAT-BROADBAND-CDN-IN term 1 then accept
+set logical-systems MCDN-RT policy-options policy-statement BOSURHAT-BROADBAND-CDN-IN term 5 then reject
+
+
+
+BDIX-1483-172.16.35.88/30-ASN-149765
+
+set logical-systems NIX-RT interfaces ae11 unit 1483 description BOSURHAT-BROADBAND-BDIX
+set logical-systems NIX-RT interfaces ae11 unit 1483 vlan-id 1483
+set logical-systems NIX-RT interfaces ae11 unit 1483 family inet policer input policer-1483
+set logical-systems NIX-RT interfaces ae11 unit 1483 family inet policer output policer-1483
+set logical-systems NIX-RT interfaces ae11 unit 1483 family inet address 172.16.35.89/30
+set logical-systems NIX-RT firewall policer policer-1483 if-exceeding bandwidth-limit 400m
+set logical-systems NIX-RT firewall policer policer-1483 if-exceeding burst-size-limit 1m
+set logical-systems NIX-RT firewall policer policer-1483 then discard
+
+set logical-systems NIX-RT protocols bgp group BOSURHAT-BROADBAND-BDIX neighbor 172.16.35.90 description BOSURHAT-BROADBAND-BDIX
+set logical-systems NIX-RT protocols bgp group BOSURHAT-BROADBAND-BDIX neighbor 172.16.35.90 local-address 172.16.35.89
+set logical-systems NIX-RT protocols bgp group BOSURHAT-BROADBAND-BDIX neighbor 172.16.35.90 import BOSURHAT-BROADBAND-BDIX-IN
+set logical-systems NIX-RT protocols bgp group BOSURHAT-BROADBAND-BDIX neighbor 172.16.35.90 export CLIENT-NIX-OUT
+set logical-systems NIX-RT protocols bgp group BOSURHAT-BROADBAND-BDIX neighbor 172.16.35.90 peer-as 64655
+set logical-systems NIX-RT firewall family inet filter protect-router-control-plane term bgp from source-address 172.16.35.90/32
+
+
+set logical-systems NIX-RT policy-options policy-statement BOSURHAT-BROADBAND-BDIX-IN term 1 from route-filter 103.42.203.92/30 upto /32
+set logical-systems NIX-RT policy-options policy-statement BOSURHAT-BROADBAND-BDIX-IN term 1 then local-preference add 400
+set logical-systems NIX-RT policy-options policy-statement BOSURHAT-BROADBAND-BDIX-IN term 1 then accept
+set logical-systems NIX-RT policy-options policy-statement BOSURHAT-BROADBAND-BDIX-IN term 10 then reject
+    </pre>
 </div>
 
                                                                                                        
