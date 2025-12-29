@@ -668,6 +668,16 @@ interface GigaEthernet0/15
             <li>int range tg 1/1,4</li>
             <li>aggregator-group 1</li>
          </ul>
+
+         <pre class="y">
+            interface port-aggregator 1 
+switchport mode dot1q-tunnel-uplink 
+switchport trunk vlan-allowed 2530
+description  RW-To-OLT-LACP
+
+interface range gigaEthernet 0/1-2
+switchport mode dot1q-tunnel-uplink
+         </pre>
          <p class="x">LACP load-balance From SW to MK RW</p>
          <ul class="y">
             <li>aggregator-group load-balance src-ip</li>
