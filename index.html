@@ -1536,6 +1536,18 @@ External Port = Outside (বাইরে থেকে কানেক্ট ক�
 		<li>SW1(config-if)# ipv6 address 2001:db8:20::1/64 </li>
 		<li>SW1(config-if)# no shutdown </li>
 </ul>
+<p class="x">EPON OLT </p>
+<pre>
+    EPON OLT
+    =========
+
+  olt 4
+  no-bind onu-id all 
+  
+  show olt 1 all-onu-info
+  system save all
+</pre>
+
 <p class="x">Viewing Device IPv4 Addresses</p>
 <ul class="y">
    <li>SW1# show ip interface brief</li>
