@@ -1283,6 +1283,24 @@ External Port = Outside (বাইরে থেকে কানেক্ট ক�
 <li>add address=45.57.51.142 comment=Link3 list=SpeedTestIP           </li>
     </ul>
     <ul class="y">
+
+
+        <p class="x">Fast Dotcom </p>
+        <ul class="y">
+            <pre>
+                
+# Step 1: Queue type গুলো বানান (PCQ দিয়ে, শেয়ার্ড bandwidth এর জন্য)
+
+/queue type add name=FAST.COM-UP kind=pcq pcq-rate=200M pcq-classifier=src-address
+/queue type add name=FAST.COM-DW kind=pcq pcq-rate=200M pcq-classifier=dst-address
+
+# Step 2: Simple queue যোগ করুন
+/queue simple
+add name=SpeedTest target="157.119.185.0/24,182.79.164.0/24,182.79.223.0/24,182.79.245.0/24,23.246.54.0/23,52.41.166.0/24,34.209.190.0/24,204.93.150.0/24,23.58.58.0/24,116.202.22.0/24,202.150.221.0/24,45.57.96.0/24,103.119.103.0/24,103.230.16.0/22,103.15.42.0/24,139.162.23.0/24,148.113.0.0/18" \
+    queue=FAST.COM-UP/FAST.COM-DW max-limit=1G/1G limit-at=0/0 priority=1/1 \
+    burst-limit=0/0 burst-threshold=0/0 burst-time=0s/0s packet-marks="" parent=none
+            </pre>
+        </ul>
         <li>/ip firewall mangle                                                                                           </li>  
 <li>add action=mark-packet chain=prerouting new-packet-mark=speed passthrough=yes src-address-list=SpeedTestIP    </li>
 <li>add action=mark-packet chain=prerouting dst-address-list=SpeedTestIP new-packet-mark=speed passthrough=yes    </li>
